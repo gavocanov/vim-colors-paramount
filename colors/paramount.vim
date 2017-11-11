@@ -153,7 +153,7 @@ call s:h('CursorLineNr',  {'fg': s:purple, 'bg': s:bg_very_subtle})
 call s:h('Question',      {'fg': s:red})
 call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:purple})
 call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': 'italic', 'cterm': 'italic'})
-call s:h('VertSplit',     {'bg': s:bg, 'fg': s:bg})
+call s:h('VertSplit',     {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
 call s:h('Title',         {'fg': s:dark_blue})
 call s:h('Visual',        {'fg': s:bg, 'bg': s:visual})
 call s:h('VisualNOS',     {'bg': s:bg_subtle})
@@ -165,8 +165,7 @@ call s:h('DiffAdd',       {'fg': s:green})
 call s:h('DiffDelete',    {'fg': s:red})
 call s:h('DiffChange',    {'fg': s:dark_yellow})
 call s:h('DiffText',      {'fg': s:dark_blue})
-call s:h('SignColumn',    {'bg': s:bg_very_subtle})
-
+call s:h('SignColumn',    {'bg': s:bg})
 
 if has('gui_running')
   call s:h('SpellBad',    {'gui': 'underline', 'sp': s:red})
@@ -219,26 +218,28 @@ hi link GitGutterChangeDelete       LineNr
 " My custom stuff
 " **********************************************************************************************************************
 " err/warnings
-call s:h('ErrorNoBg',       {'fg': s:orange, 'gui': 'italic', 'cterm': 'italic'})
-call s:h('ErrorSignNoBg',   {'fg': s:orange, 'bg': s:bg_very_subtle})
-call s:h('ErrorBg',         {'bg': s:light_black})
-call s:h('WarnNoBg',        {'fg': s:dark_yellow, 'gui': 'italic', 'cterm': 'italic'})
-call s:h('WarnSignNoBg',    {'fg': s:dark_yellow, 'bg': s:bg_very_subtle})
-call s:h('WarnBg',          {'bg': s:light_black})
+call s:h('ErrorNoBg',               {'fg': s:orange, 'gui': 'italic', 'cterm': 'italic'})
+call s:h('ErrorSignNoBg',           {'fg': s:orange, 'bg': s:bg})
+call s:h('ErrorBg',                 {'bg': s:light_black})
+call s:h('WarnNoBg',                {'fg': s:dark_yellow, 'gui': 'italic', 'cterm': 'italic'})
+call s:h('WarnSignNoBg',            {'fg': s:dark_yellow, 'bg': s:bg})
+call s:h('WarnBg',                  {'bg': s:light_black})
 " ale
-hi! link  ALEErrorSign           ErrorSignNoBg
-hi! link  ALEError               ErrorNoBg
-hi! link  ALEErrorLine           ErrorBg
-hi! link  ALEWarningSign         WarnSignNoBg
-hi! link  ALEWarning             WarnNoBg
-hi! link  ALEWarningLine         WarnBg
+hi! link  ALEErrorSign              ErrorSignNoBg
+hi! link  ALEError                  ErrorNoBg
+hi! link  ALEErrorLine              ErrorBg
+hi! link  ALEWarningSign            WarnSignNoBg
+hi! link  ALEWarning                WarnNoBg
+hi! link  ALEWarningLine            WarnBg
 "   GitGutter
-hi! link  GitGutterAdd           WarnSignNoBg
-hi! link  GitGutterChange        WarnSignNoBg
-hi! link  GitGutterDelete        ErrorSignNoBg
-hi! link  GitGutterChangeDelete  ErrorSignNoBg
+hi! link  GitGutterAdd              WarnSignNoBg
+hi! link  GitGutterChange           WarnSignNoBg
+hi! link  GitGutterDelete           ErrorSignNoBg
+hi! link  GitGutterChangeDelete     ErrorSignNoBg
 "   Match parens
-hi! link  MatchParen             Search
+hi! link  MatchParen                Search
+" I want just CursorLineNR
+hi! clear CursorLine
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
