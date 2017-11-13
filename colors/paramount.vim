@@ -96,7 +96,7 @@ if &background != s:background
 endif
 
 call s:h('Cursor',        {'bg': s:purple,      'fg':   s:norm })
-call s:h('Comment',       {'fg': s:bg_subtle,   'gui':  'italic', 'cterm': 'italic'})
+call s:h('Comment',       {'fg': s:norm_subtle, 'gui':  'italic', 'cterm': 'italic'})
 
 call s:h('Constant',      {'fg': s:purple})
 hi! link Character        Constant
@@ -151,7 +151,7 @@ hi! link ModeMsg MoreMsg
 call s:h('LineNr',        {'fg': s:darker_blue})
 call s:h('CursorLineNr',  {'fg': s:purple, 'bg': s:bg_very_subtle})
 call s:h('Question',      {'fg': s:red})
-call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:purple})
+call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:blue})
 call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': 'italic', 'cterm': 'italic'})
 call s:h('VertSplit',     {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
 call s:h('Title',         {'fg': s:dark_blue})
@@ -250,6 +250,9 @@ hi! link xmlEndTag      Statement
 hi! link Operator       Statement
 " JavaScript
 function! s:paramountJs()
+    if g:colors_name !=? 'paramount'
+        return
+    endif
     " let me se functions...
     hi! link jsClassFuncName    SpecialKey
     hi! link jsFuncName         SpecialKey
@@ -264,12 +267,18 @@ function! s:paramountJs()
 endfunction
 " TypeScript
 function! s:paramountTs()
+    if g:colors_name !=? 'paramount'
+        return
+    endif
     hi!   link typescriptBraces           Statement
     hi!   link typescriptFuncKeyword      Statement
     hi!   link typescriptIdentifier       Statement
 endfunction
 " Kotlin
 function! s:paramountKt()
+    if g:colors_name !=? 'paramount'
+        return
+    endif
     hi! link ktAnnotation     SpecialKey
     hi! link ktModifier       Statement
     hi! link ktStructure      Statement
@@ -277,6 +286,9 @@ function! s:paramountKt()
 endfunction
 " Haskell
 function! s:paramountHs()
+    if g:colors_name !=? 'paramount'
+        return
+    endif
     hi! link haskellDeclKeyword Statement
     hi! link haskellDecl        Statement
     hi! link haskellType        SpecialKey
@@ -287,6 +299,9 @@ function! s:paramountHs()
 endfunction
 " Java
 function! s:paramountJava()
+    if g:colors_name !=? 'paramount'
+        return
+    endif
     hi! link javaScodeDecl              Statement
     hi! link javaClassDecl              Statement
     hi! link javaStorageClass           Statement
