@@ -12,13 +12,27 @@
 " https://github.com/reedes/vim-colors-off
 "
 """
-hi clear
-
-if exists('syntax on')
+if v:version > 580
+  hi clear
+  if exists('syntax_on')
     syntax reset
+  endif
 endif
 
 let g:colors_name='paramount'
+
+" global settings
+if !exists('g:colors_paramount_bi')
+    let g:colors_paramount_bi = 0
+endif
+
+if g:colors_paramount_bi
+    let s:bold = 'bold'
+    let s:italic = 'italic'
+else
+    let s:bold = 'NONE'
+    let s:italic = 'NONE'
+endif
 
 let s:black           = { 'gui': '#161616', 'cterm': '233' }
 let s:medium_gray     = { 'gui': '#767676', 'cterm': '243' }
@@ -96,7 +110,7 @@ if &background != s:background
 endif
 
 call s:h('Cursor',        {'bg': s:purple,      'fg':   s:norm })
-call s:h('Comment',       {'fg': s:norm_subtle, 'gui':  'italic', 'cterm': 'italic'})
+call s:h('Comment',       {'fg': s:norm_subtle, 'gui':  s:italic, 'cterm': s:italic})
 
 call s:h('Constant',      {'fg': s:purple})
 hi! link Character        Constant
@@ -116,7 +130,7 @@ hi! link Label            Statement
 hi! link Keyword          Statement
 hi! link Exception        Statement
 
-call s:h('Operator',      {'fg': s:norm, 'cterm': 'bold', 'gui': 'bold'})
+call s:h('Operator',      {'fg': s:norm, 'cterm': s:bold, 'gui': s:bold})
 
 call s:h('PreProc',     {'fg': s:norm_subtle})
 hi! link Include          PreProc
@@ -129,7 +143,7 @@ hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-call s:h('Special',       {'fg': s:norm_subtle, 'gui': 'italic'})
+call s:h('Special',       {'fg': s:norm_subtle, 'gui': s:italic})
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
@@ -138,7 +152,7 @@ hi! link Debug            Special
 
 call s:h('Underlined',    {'fg': s:norm, 'gui': 'underline', 'cterm': 'underline'})
 call s:h('Ignore',        {'fg': s:bg})
-call s:h('Error',         {'fg': s:light_red, 'cterm': 'bold'})
+call s:h('Error',         {'fg': s:light_red, 'cterm': s:bold})
 call s:h('Todo',          {'fg': s:purple, 'gui': 'underline', 'cterm': 'underline'})
 call s:h('SpecialKey',    {'fg': s:light_green})
 call s:h('NonText',       {'fg': s:bg})
@@ -146,13 +160,13 @@ call s:h('Directory',     {'fg': s:dark_blue})
 call s:h('ErrorMsg',      {'fg': s:pink})
 call s:h('IncSearch',     {'bg': s:dark_yellow, 'fg': s:black})
 call s:h('Search',        {'fg': s:orange})
-call s:h('MoreMsg',       {'fg': s:medium_gray, 'cterm': 'bold', 'gui': 'bold'})
+call s:h('MoreMsg',       {'fg': s:medium_gray, 'cterm': s:bold, 'gui': s:bold})
 hi! link ModeMsg MoreMsg
 call s:h('LineNr',        {'fg': s:darker_blue})
 call s:h('CursorLineNr',  {'fg': s:purple, 'bg': s:bg_very_subtle})
 call s:h('Question',      {'fg': s:red})
 call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:blue})
-call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': 'italic', 'cterm': 'italic'})
+call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': s:italic, 'cterm': s:italic})
 call s:h('VertSplit',     {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
 call s:h('Title',         {'fg': s:dark_blue})
 call s:h('Visual',        {'fg': s:bg, 'bg': s:visual})
@@ -184,7 +198,7 @@ call s:h('PmenuSel',      {'fg': s:norm, 'bg': s:purple})
 call s:h('PmenuSbar',     {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('PmenuThumb',    {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('TabLine',       {'fg': s:norm, 'bg': s:bg_very_subtle})
-call s:h('TabLineSel',    {'fg': s:purple, 'bg': s:bg_subtle, 'gui': 'bold', 'cterm': 'bold'})
+call s:h('TabLineSel',    {'fg': s:purple, 'bg': s:bg_subtle, 'gui': s:bold, 'cterm': s:bold})
 call s:h('TabLineFill',   {'fg': s:norm, 'bg': s:bg_very_subtle})
 call s:h('CursorColumn',  {'bg': s:bg_very_subtle})
 call s:h('CursorLine',    {'bg': s:bg_very_subtle})
@@ -202,9 +216,9 @@ call s:h('htmlH6',        {'bg': s:bg, 'fg': s:norm})
 
 " Synatastic
 call s:h('SyntasticWarningSign',    {'fg': s:yellow})
-call s:h('SyntasticWarning',        {'bg': s:yellow, 'fg': s:black, 'gui': 'bold', 'cterm': 'bold'})
+call s:h('SyntasticWarning',        {'bg': s:yellow, 'fg': s:black, 'gui': s:bold, 'cterm': s:bold})
 call s:h('SyntasticErrorSign',      {'fg': s:red})
-call s:h('SyntasticError',          {'bg': s:red, 'fg': s:white, 'gui': 'bold', 'cterm': 'bold'})
+call s:h('SyntasticError',          {'bg': s:red, 'fg': s:white, 'gui': s:bold, 'cterm': s:bold})
 
 " Signify, git-gutter
 hi link SignifySignAdd              LineNr
@@ -218,10 +232,10 @@ hi link GitGutterChangeDelete       LineNr
 " My custom stuff
 " **********************************************************************************************************************
 " err/warnings
-call s:h('ErrorNoBg',               {'fg': s:orange, 'gui': 'italic', 'cterm': 'italic'})
+call s:h('ErrorNoBg',               {'fg': s:orange, 'gui': s:italic, 'cterm': s:italic})
 call s:h('ErrorSignNoBg',           {'fg': s:orange, 'bg': s:bg})
 call s:h('ErrorBg',                 {'bg': s:light_black})
-call s:h('WarnNoBg',                {'fg': s:dark_yellow, 'gui': 'italic', 'cterm': 'italic'})
+call s:h('WarnNoBg',                {'fg': s:dark_yellow, 'gui': s:italic, 'cterm': s:italic})
 call s:h('WarnSignNoBg',            {'fg': s:dark_yellow, 'bg': s:bg})
 call s:h('WarnBg',                  {'bg': s:light_black})
 " ale
@@ -249,87 +263,36 @@ hi! link xmlTagName     Statement
 hi! link xmlEndTag      Statement
 hi! link Operator       Statement
 " JavaScript
-function! s:paramountJs()
-    if g:colors_name !=? 'paramount'
-        return
-    endif
-    " let me se functions...
-    hi! link jsClassFuncName    SpecialKey
-    hi! link jsFuncName         SpecialKey
-    hi! link jsFunction         SpecialKey
-    " some stuff that needs to be different
-    hi! link jsBlock            Statement
-    hi! link jsClassKeywords    Statement
-    hi! link jsStorageClass     Statement
-    hi! link jsObjectKey        Statement
-    " and some stuff that needs accent
-    hi! link jsGlobalObjects    Title
-endfunction
+hi! link jsClassFuncName    SpecialKey
+hi! link jsFuncName         SpecialKey
+hi! link jsFunction         SpecialKey
+hi! link jsBlock            Statement
+hi! link jsClassKeywords    Statement
+hi! link jsStorageClass     Statement
+hi! link jsObjectKey        Statement
+hi! link jsGlobalObjects    Title
 " TypeScript
-function! s:paramountTs()
-    if g:colors_name !=? 'paramount'
-        return
-    endif
-    hi!   link typescriptBraces           Statement
-    hi!   link typescriptFuncKeyword      Statement
-    hi!   link typescriptIdentifier       Statement
-endfunction
+hi! link typescriptBraces           Statement
+hi! link typescriptFuncKeyword      Statement
+hi! link typescriptIdentifier       Statement
 " Kotlin
-function! s:paramountKt()
-    if g:colors_name !=? 'paramount'
-        return
-    endif
-    hi! link ktAnnotation     SpecialKey
-    hi! link ktModifier       Statement
-    hi! link ktStructure      Statement
-    hi! link ktType           Statement
-endfunction
+hi! link ktAnnotation     SpecialKey
+hi! link ktModifier       Statement
+hi! link ktStructure      Statement
+hi! link ktType           Statement
 " Haskell
-function! s:paramountHs()
-    if g:colors_name !=? 'paramount'
-        return
-    endif
-    hi! link haskellDeclKeyword Statement
-    hi! link haskellDecl        Statement
-    hi! link haskellType        SpecialKey
-    hi! link haskellLet         Statement
-    hi! link haskellWhere       Statement
-    hi! link haskellPragma      Title
-    hi! link haskellLambda      SpecialKey
-endfunction
+hi! link haskellDeclKeyword Statement
+hi! link haskellDecl        Statement
+hi! link haskellType        SpecialKey
+hi! link haskellLet         Statement
+hi! link haskellWhere       Statement
+hi! link haskellPragma      Title
+hi! link haskellLambda      SpecialKey
 " Java
-function! s:paramountJava()
-    if g:colors_name !=? 'paramount'
-        return
-    endif
-    hi! link javaScodeDecl              Statement
-    hi! link javaClassDecl              Statement
-    hi! link javaStorageClass           Statement
-    hi! link javaMethodDecl             Statement
-    hi! link javaTypeDef                Statement
-    hi! link javaType                   Statement
-endfunction
-" **********************************************************************************************************************
-" ft hooks
-" **********************************************************************************************************************
-augroup au_javascript_paramount_mod
-    autocmd!
-    autocmd FileType javascript,javascript.jsx call s:paramountJs()
-augroup END
-augroup au_java_paramount_mod
-    autocmd!
-    autocmd FileType java call s:paramountJava()
-augroup END
-augroup au_kotlin_paramount_mod
-    autocmd!
-    autocmd FileType kotlin call s:paramountKt()
-augroup END
-augroup au_haskell_paramount_mod
-    autocmd!
-    autocmd FileType haskell,cabal call s:paramountHs()
-augroup END
-augroup au_typescript_paramount_mod
-    autocmd!
-    autocmd FileType typescript call s:paramountTs()
-augroup END
+hi! link javaScodeDecl              Statement
+hi! link javaClassDecl              Statement
+hi! link javaStorageClass           Statement
+hi! link javaMethodDecl             Statement
+hi! link javaTypeDef                Statement
+hi! link javaType                   Statement
 " **********************************************************************************************************************
