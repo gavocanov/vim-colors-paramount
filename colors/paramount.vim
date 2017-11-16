@@ -162,7 +162,7 @@ call s:h('IncSearch',     {'bg': s:dark_yellow, 'fg': s:black})
 call s:h('Search',        {'fg': s:orange})
 call s:h('MoreMsg',       {'fg': s:medium_gray, 'cterm': s:bold, 'gui': s:bold})
 hi! link ModeMsg MoreMsg
-call s:h('LineNr',        {'fg': s:darker_blue})
+call s:h('LineNr',        {'fg': s:dark_blue})
 call s:h('CursorLineNr',  {'fg': s:purple, 'bg': s:bg_very_subtle})
 call s:h('Question',      {'fg': s:red})
 call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:blue})
