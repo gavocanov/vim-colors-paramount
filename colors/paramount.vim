@@ -253,7 +253,7 @@ hi! link  GitGutterChangeDelete     ErrorSignNoBg
 "   Match parens
 hi! link  MatchParen                Search
 " I want just CursorLineNR
-hi! clear CursorLine
+" hi! clear CursorLine
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
