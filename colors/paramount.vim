@@ -34,7 +34,7 @@ else
     let s:italic = 'NONE'
 endif
 
-let s:black           = { 'gui': '#161616', 'cterm': '233' }
+let s:black           = { 'gui': '#121212', 'cterm': '233' }
 let s:medium_gray     = { 'gui': '#767676', 'cterm': '243' }
 let s:white           = { 'gui': '#F1F1F1', 'cterm': '15'  }
 let s:actual_white    = { 'gui': '#FFFFFF', 'cterm': '231' }
@@ -239,60 +239,60 @@ call s:h('WarnNoBg',                {'fg': s:dark_yellow, 'gui': s:italic, 'cter
 call s:h('WarnSignNoBg',            {'fg': s:dark_yellow, 'bg': s:bg})
 call s:h('WarnBg',                  {'bg': s:light_black})
 " ale
-hi! link  ALEErrorSign              ErrorSignNoBg
-hi! link  ALEError                  ErrorNoBg
-hi! link  ALEErrorLine              ErrorBg
-hi! link  ALEWarningSign            WarnSignNoBg
-hi! link  ALEWarning                WarnNoBg
-hi! link  ALEWarningLine            WarnBg
-"   GitGutter
-hi! link  GitGutterAdd              WarnSignNoBg
-hi! link  GitGutterChange           WarnSignNoBg
-hi! link  GitGutterDelete           ErrorSignNoBg
-hi! link  GitGutterChangeDelete     ErrorSignNoBg
-"   Match parens
-hi! link  MatchParen                Search
+hi link  ALEErrorSign              ErrorSignNoBg
+hi link  ALEError                  ErrorNoBg
+hi link  ALEErrorLine              ErrorBg
+hi link  ALEWarningSign            WarnSignNoBg
+hi link  ALEWarning                WarnNoBg
+hi link  ALEWarningLine            WarnBg
+" GitGutter
+hi link  GitGutterAdd              WarnSignNoBg
+hi link  GitGutterChange           WarnSignNoBg
+hi link  GitGutterDelete           ErrorSignNoBg
+hi link  GitGutterChangeDelete     ErrorSignNoBg
+" Match parens
+hi link  MatchParen                Search
 " I want just CursorLineNR
-" hi! clear CursorLine
+" hi clear CursorLine
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
 " Xml
-hi! link xmlAttrib      Statement
-hi! link xmlTagName     Statement
-hi! link xmlEndTag      Statement
-hi! link Operator       Statement
+hi link xmlAttrib      Statement
+hi link xmlTagName     Statement
+hi link xmlEndTag      Statement
+hi link Operator       Statement
 " JavaScript
-hi! link jsClassFuncName    SpecialKey
-hi! link jsFuncName         SpecialKey
-hi! link jsFunction         SpecialKey
-hi! link jsBlock            Statement
-hi! link jsClassKeywords    Statement
-hi! link jsStorageClass     Statement
-hi! link jsObjectKey        Statement
-hi! link jsGlobalObjects    Title
+hi link jsClassFuncName    SpecialKey
+hi link jsFuncName         SpecialKey
+hi link jsFunction         SpecialKey
+hi link jsBlock            Statement
+hi link jsClassKeywords    Statement
+hi link jsStorageClass     Statement
+hi link jsObjectKey        Statement
+hi link jsGlobalObjects    Title
 " TypeScript
-hi! link typescriptBraces           Statement
-hi! link typescriptFuncKeyword      Statement
-hi! link typescriptIdentifier       Statement
+hi link typescriptBraces           Statement
+hi link typescriptFuncKeyword      Statement
+hi link typescriptIdentifier       Statement
 " Kotlin
-hi! link ktAnnotation     SpecialKey
-hi! link ktModifier       Statement
-hi! link ktStructure      Statement
-hi! link ktType           Statement
+hi link ktAnnotation     SpecialKey
+hi link ktModifier       Statement
+hi link ktStructure      Statement
+hi link ktType           Statement
 " Haskell
-hi! link haskellDeclKeyword Statement
-hi! link haskellDecl        Statement
-hi! link haskellType        SpecialKey
-hi! link haskellLet         Statement
-hi! link haskellWhere       Statement
-hi! link haskellPragma      Title
-hi! link haskellLambda      SpecialKey
+hi link haskellDeclKeyword Statement
+hi link haskellDecl        Statement
+hi link haskellType        SpecialKey
+hi link haskellLet         Statement
+hi link haskellWhere       Statement
+hi link haskellPragma      Title
+hi link haskellLambda      SpecialKey
 " Java
-hi! link javaScodeDecl              Statement
-hi! link javaClassDecl              Statement
-hi! link javaStorageClass           Statement
-hi! link javaMethodDecl             Statement
-hi! link javaTypeDef                Statement
-hi! link javaType                   Statement
+hi link javaScodeDecl              Statement
+hi link javaClassDecl              Statement
+hi link javaStorageClass           Statement
+hi link javaMethodDecl             Statement
+hi link javaTypeDef                Statement
+hi link javaType                   Statement
 " **********************************************************************************************************************
