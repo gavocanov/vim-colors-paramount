@@ -109,8 +109,8 @@ if &background != s:background
    execute 'set background=' . s:background
 endif
 
-call s:h('Cursor',        {'bg': s:purple,      'fg':   s:norm })
-call s:h('Comment',       {'fg': s:norm_subtle, 'gui':  s:italic, 'cterm': s:italic})
+call s:h('Cursor',        {'bg': s:purple,       'fg':   s:norm })
+call s:h('Comment',       {'fg': s:lighter_black, 'gui':  s:italic, 'cterm': s:italic})
 
 call s:h('Constant',      {'fg': s:purple})
 hi! link Character        Constant
