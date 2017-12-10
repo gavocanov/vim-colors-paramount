@@ -259,42 +259,49 @@ hi link  MatchParen                Search
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
-" Xml
-hi link xmlAttrib      Statement
-hi link xmlTagName     Statement
-hi link xmlEndTag      Statement
-hi link Operator       Statement
-" JavaScript
-hi link jsClassFuncName    SpecialKey
-hi link jsFuncName         SpecialKey
-hi link jsFunction         SpecialKey
-hi link jsBlock            Statement
-hi link jsClassKeywords    Statement
-hi link jsStorageClass     Statement
-hi link jsObjectKey        Statement
-hi link jsGlobalObjects    Title
-" TypeScript
+"  Xml
+hi link xmlAttrib                  Statement
+hi link xmlTagName                 Statement
+hi link xmlEndTag                  Statement
+hi link Operator                   Statement
+"  JavaScript
+hi link jsClassFuncName            SpecialKey
+hi link jsFuncName                 SpecialKey
+hi link jsFunction                 SpecialKey
+hi link jsBlock                    Statement
+hi link jsClassKeywords            Statement
+hi link jsStorageClass             Statement
+hi link jsObjectKey                Statement
+hi link jsGlobalObjects            Title
+"  TypeScript
 hi link typescriptBraces           Statement
 hi link typescriptFuncKeyword      Statement
 hi link typescriptIdentifier       Statement
-" Kotlin
-hi link ktAnnotation     SpecialKey
-hi link ktModifier       Statement
-hi link ktStructure      Statement
-hi link ktType           Statement
-" Haskell
-hi link haskellDeclKeyword Statement
-hi link haskellDecl        Statement
-hi link haskellType        SpecialKey
-hi link haskellLet         Statement
-hi link haskellWhere       Statement
-hi link haskellPragma      Title
-hi link haskellLambda      SpecialKey
-" Java
+"  Kotlin
+hi link ktAnnotation               SpecialKey
+hi link ktModifier                 Statement
+hi link ktStructure                Statement
+hi link ktType                     Statement
+"  Haskell
+hi link haskellDeclKeyword         Statement
+hi link haskellDecl                Statement
+hi link haskellType                SpecialKey
+hi link haskellLet                 Statement
+hi link haskellWhere               Statement
+hi link haskellPragma              Title
+hi link haskellLambda              SpecialKey
+"  Java
 hi link javaScodeDecl              Statement
 hi link javaClassDecl              Statement
 hi link javaStorageClass           Statement
 hi link javaMethodDecl             Statement
 hi link javaTypeDef                Statement
 hi link javaType                   Statement
+"  Idris
+hi link idrisStructure             Statement
+hi link idrisWhere                 Keyword
+hi link idrisType                  SpecialKey
+hi link idrisOperators             Delimiter
+hi link idrisDirective             Title
+hi link idrisModule                Title
 " **********************************************************************************************************************
