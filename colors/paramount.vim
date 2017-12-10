@@ -299,9 +299,10 @@ hi link javaTypeDef                Statement
 hi link javaType                   Statement
 "  Idris
 hi link idrisStructure             Statement
-hi link idrisWhere                 Keyword
 hi link idrisType                  SpecialKey
 hi link idrisOperators             Delimiter
 hi link idrisDirective             Title
 hi link idrisModule                Title
+hi link idrisWhere                 Keyword
+hi link idrisLet                   Keyword
 " **********************************************************************************************************************
