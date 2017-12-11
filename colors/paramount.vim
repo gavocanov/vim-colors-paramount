@@ -305,4 +305,5 @@ hi link idrisDirective             Title
 hi link idrisModule                Title
 hi link idrisWhere                 Keyword
 hi link idrisLet                   Keyword
+hi link idrisImport                Keyword
 " **********************************************************************************************************************
