@@ -290,6 +290,11 @@ hi link haskellLet                 Statement
 hi link haskellWhere               Statement
 hi link haskellPragma              Title
 hi link haskellLambda              SpecialKey
+hi link haskellForeignKeywords     Keyword
+hi link haskellImportKeywords      Keyword
+hi link haskellForeignImport       Keyword
+hi link haskellOperators           Delimiter
+hi link haskellQuote               Title
 "  Java
 hi link javaScodeDecl              Statement
 hi link javaClassDecl              Statement
