@@ -261,6 +261,7 @@ hi link  MatchParen                Search
 " **********************************************************************************************************************
 "  Xml
 hi link xmlAttrib                  Statement
+hi link xmlTag                     Delimiter
 hi link xmlTagName                 Statement
 hi link xmlEndTag                  Statement
 hi link Operator                   Statement
@@ -278,10 +279,15 @@ hi link typescriptBraces           Statement
 hi link typescriptFuncKeyword      Statement
 hi link typescriptIdentifier       Statement
 "  Kotlin
-hi link ktAnnotation               SpecialKey
-hi link ktModifier                 Statement
-hi link ktStructure                Statement
-hi link ktType                     Statement
+hi link ktAnnotation                SpecialKey
+hi link ktModifier                  Keyword
+hi link ktStructure                 Keyword
+hi link ktType                      Keyword
+hi link ktOperator                  Keyword
+hi link ktSimpleInterpolation       Keyword
+hi link ktComplexInterpolation      Keyword
+hi link ktComplexInterpolationBrace Keyword
+hi link ktEscapedName               Title
 "  Haskell
 hi link haskellDeclKeyword         Statement
 hi link haskellDecl                Statement
