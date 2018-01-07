@@ -264,7 +264,7 @@ hi link xmlAttrib                  Statement
 hi link xmlTag                     Delimiter
 hi link xmlTagName                 Statement
 hi link xmlEndTag                  Statement
-hi link Operator                   Statement
+hi link Operator                   Delimiter
 "  JavaScript
 hi link jsClassFuncName            SpecialKey
 hi link jsFuncName                 SpecialKey
@@ -274,6 +274,8 @@ hi link jsClassKeywords            Statement
 hi link jsStorageClass             Statement
 hi link jsObjectKey                Statement
 hi link jsGlobalObjects            Title
+hi link Noise                      Delimiter
+hi link jsOperator                 Delimiter
 "  TypeScript
 hi link typescriptBraces           Statement
 hi link typescriptFuncKeyword      Statement
@@ -317,4 +319,11 @@ hi link idrisModule                Title
 hi link idrisWhere                 Keyword
 hi link idrisLet                   Keyword
 hi link idrisImport                Keyword
+" Purescript
+hi link purescriptTypeVar          Title
+hi link purescriptType             SpecialKey
+hi link purescriptClassName        SpecialKey
+hi link purescriptOperator         Delimiter
+hi link purescriptOperatorType     Delimiter
+hi link purescriptOperatorTypeSig  Delimiter
 " **********************************************************************************************************************
