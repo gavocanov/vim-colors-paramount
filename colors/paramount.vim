@@ -119,9 +119,11 @@ hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
 
-"call s:h("Identifier",    {"fg": s:dark_blue})
-hi! link Identifier       Normal
-hi! link Function         Identifier
+"call s:h('Identifier',    {'fg': s:dark_blue})
+call s:h('Identifier',    {'fg': s:light_gray})
+" hi! link Identifier       Normal
+" hi! link Function         Identifier
+hi! link Function         Normal
 
 call s:h('Statement',     {'fg': s:norm_subtle})
 hi! link Conditonal       Statement
@@ -326,4 +328,6 @@ hi link purescriptClassName        SpecialKey
 hi link purescriptOperator         Delimiter
 hi link purescriptOperatorType     Delimiter
 hi link purescriptOperatorTypeSig  Delimiter
+hi link purescriptIdentifier       Identifier
+hi link purescriptFunction         Normal
 " **********************************************************************************************************************
