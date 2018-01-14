@@ -154,7 +154,7 @@ hi! link SpecialComment   Special
 hi! link Debug            Special
 
 call s:h('Underlined',    {'fg': s:norm, 'gui': 'underline', 'cterm': 'underline'})
-call s:h('Ignore',        {'fg': s:bg})
+call s:h('Ignore',        {'fg': s:bg_very_subtle})
 call s:h('Error',         {'fg': s:light_red, 'cterm': s:bold})
 call s:h('Todo',          {'fg': s:purple, 'gui': 'underline', 'cterm': 'underline'})
 call s:h('SpecialKey',    {'fg': s:light_green})
@@ -257,6 +257,11 @@ hi link  GitGutterAdd              WarnSignNoBg
 hi link  GitGutterChange           WarnSignNoBg
 hi link  GitGutterDelete           ErrorSignNoBg
 hi link  GitGutterChangeDelete     ErrorSignNoBg
+" Signify
+hi link  SignifySignAdd            WarnSignNoBg
+hi link  SignifySignChange         WarnSignNoBg
+hi link  SignifySignDelete         ErrorSignNoBg
+hi link  SignifySignChangeDelete   ErrorSignNoBg
 " Match parens
 hi link  MatchParen                Search
 " I want just CursorLineNR
