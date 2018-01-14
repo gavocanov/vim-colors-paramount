@@ -134,13 +134,13 @@ hi! link Exception        Statement
 
 call s:h('Operator',      {'fg': s:norm, 'cterm': s:bold, 'gui': s:bold})
 
-call s:h('PreProc',     {'fg': s:norm_subtle})
+call s:h('PreProc',       {'fg': s:norm_subtle})
 hi! link Include          PreProc
 hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h('Type',          {'fg': s:norm})
+call s:h('Type',          {'fg': s:norm, 'cterm': s:italic, 'gui': s:italic})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
@@ -174,7 +174,7 @@ call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:blue})
 
 call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': s:italic, 'cterm': s:italic})
 call s:h('VertSplit',     {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
-call s:h('Title',         {'fg': s:dark_blue})
+call s:h('Title',         {'fg': s:dark_green})
 call s:h('Visual',        {'fg': s:bg, 'bg': s:visual})
 call s:h('VisualNOS',     {'bg': s:bg_subtle})
 call s:h('WarningMsg',    {'fg': s:red})
@@ -222,46 +222,52 @@ call s:h('htmlH5',        {'bg': s:bg, 'fg': s:norm})
 call s:h('htmlH6',        {'bg': s:bg, 'fg': s:norm})
 
 " Synatastic
-call s:h('SyntasticWarningSign',    {'fg': s:yellow})
-call s:h('SyntasticWarning',        {'bg': s:yellow, 'fg': s:black, 'gui': s:bold, 'cterm': s:bold})
-call s:h('SyntasticErrorSign',      {'fg': s:red})
-call s:h('SyntasticError',          {'bg': s:red, 'fg': s:white, 'gui': s:bold, 'cterm': s:bold})
+" call s:h('SyntasticWarningSign',    {'fg': s:yellow})
+" call s:h('SyntasticWarning',        {'bg': s:yellow, 'fg': s:black, 'gui': s:bold, 'cterm': s:bold})
+" call s:h('SyntasticErrorSign',      {'fg': s:red})
+" call s:h('SyntasticError',          {'bg': s:red, 'fg': s:white, 'gui': s:bold, 'cterm': s:bold})
 
 " Signify, git-gutter
-hi link SignifySignAdd              LineNr
-hi link SignifySignDelete           LineNr
-hi link SignifySignChange           LineNr
-hi link GitGutterAdd                LineNr
-hi link GitGutterDelete             LineNr
-hi link GitGutterChange             LineNr
-hi link GitGutterChangeDelete       LineNr
+" hi link SignifySignAdd              LineNr
+" hi link SignifySignDelete           LineNr
+" hi link SignifySignChange           LineNr
+" hi link GitGutterAdd                LineNr
+" hi link GitGutterDelete             LineNr
+" hi link GitGutterChange             LineNr
+" hi link GitGutterChangeDelete       LineNr
 " **********************************************************************************************************************
 " My custom stuff
 " **********************************************************************************************************************
 " err/warnings
 call s:h('ErrorNoBg',               {'fg': s:orange, 'gui': s:italic, 'cterm': s:italic})
 call s:h('ErrorSignNoBg',           {'fg': s:orange, 'bg': s:bg})
-call s:h('ErrorBg',                 {'bg': s:light_black})
+call s:h('ErrorBg',                 {'fg': s:orange, 'gui': s:italic, 'cterm': s:italic, 'bg': s:light_black})
 call s:h('WarnNoBg',                {'fg': s:dark_yellow, 'gui': s:italic, 'cterm': s:italic})
 call s:h('WarnSignNoBg',            {'fg': s:dark_yellow, 'bg': s:bg})
 call s:h('WarnBg',                  {'bg': s:light_black})
-" ale
+call s:h('SignNoBg',                {'fg': s:dark_green, 'bg': s:bg})
+" ALE
 hi link  ALEErrorSign              ErrorSignNoBg
 hi link  ALEError                  ErrorNoBg
 hi link  ALEErrorLine              ErrorBg
 hi link  ALEWarningSign            WarnSignNoBg
 hi link  ALEWarning                WarnNoBg
-hi link  ALEWarningLine            WarnBg
+hi link  ALEWarningLine            WarnNoBg
+" Syntastic
+hi link  SyntasticWarningSign      WarnSignNoBg
+hi link  SyntasticWarning          WarnNoBg
+hi link  SyntasticErrorSign        ErrorSignNoBg
+hi link  SyntasticError            ErrorBg
 " GitGutter
-hi link  GitGutterAdd              WarnSignNoBg
-hi link  GitGutterChange           WarnSignNoBg
-hi link  GitGutterDelete           ErrorSignNoBg
-hi link  GitGutterChangeDelete     ErrorSignNoBg
+hi link  GitGutterAdd              SignNoBg
+hi link  GitGutterChange           SignNoBg
+hi link  GitGutterDelete           SignNoBg
+hi link  GitGutterChangeDelete     SignNoBg
 " Signify
-hi link  SignifySignAdd            WarnSignNoBg
-hi link  SignifySignChange         WarnSignNoBg
-hi link  SignifySignDelete         ErrorSignNoBg
-hi link  SignifySignChangeDelete   ErrorSignNoBg
+hi link  SignifySignAdd            SignNoBg
+hi link  SignifySignChange         SignNoBg
+hi link  SignifySignDelete         SignNoBg
+hi link  SignifySignChangeDelete   SignNoBg
 " Match parens
 hi link  MatchParen                Search
 " I want just CursorLineNR
@@ -294,7 +300,7 @@ hi link typescriptIdentifier       Statement
 hi link ktAnnotation                SpecialKey
 hi link ktModifier                  Keyword
 hi link ktStructure                 Keyword
-hi link ktType                      Keyword
+" hi link ktType                      Keyword
 hi link ktOperator                  Keyword
 hi link ktSimpleInterpolation       Keyword
 hi link ktComplexInterpolation      Keyword
@@ -303,7 +309,7 @@ hi link ktEscapedName               Title
 "  Haskell
 hi link haskellDeclKeyword         Statement
 hi link haskellDecl                Statement
-hi link haskellType                SpecialKey
+" hi link haskellType                SpecialKey
 hi link haskellLet                 Statement
 hi link haskellWhere               Statement
 hi link haskellPragma              Title
@@ -319,10 +325,10 @@ hi link javaClassDecl              Statement
 hi link javaStorageClass           Statement
 hi link javaMethodDecl             Statement
 hi link javaTypeDef                Statement
-hi link javaType                   Statement
+" hi link javaType                   Statement
 "  Idris
 hi link idrisStructure             Statement
-hi link idrisType                  SpecialKey
+" hi link idrisType                  SpecialKey
 hi link idrisOperators             Delimiter
 hi link idrisDirective             Title
 hi link idrisModule                Title
@@ -331,8 +337,8 @@ hi link idrisLet                   Keyword
 hi link idrisImport                Keyword
 " Purescript
 hi link purescriptTypeVar          Title
-hi link purescriptType             SpecialKey
-hi link purescriptClassName        SpecialKey
+" hi link purescriptType             SpecialKey
+hi link purescriptClassName        Type
 hi link purescriptOperator         Delimiter
 hi link purescriptOperatorType     Delimiter
 hi link purescriptOperatorTypeSig  Delimiter
