@@ -140,7 +140,7 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h('Type',          {'fg': s:norm, 'cterm': s:italic, 'gui': s:italic})
+call s:h('Type',          {'fg': s:norm_subtle})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
@@ -174,7 +174,7 @@ call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:blue})
 
 call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': s:italic, 'cterm': s:italic})
 call s:h('VertSplit',     {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
-call s:h('Title',         {'fg': s:dark_green})
+call s:h('Title',         {'fg': s:dark_blue})
 call s:h('Visual',        {'fg': s:bg, 'bg': s:visual})
 call s:h('VisualNOS',     {'bg': s:bg_subtle})
 call s:h('WarningMsg',    {'fg': s:red})
