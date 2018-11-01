@@ -168,11 +168,13 @@ hi! link ModeMsg MoreMsg
 call s:h('LineNr',        {'fg': s:lighter_black})
 call s:h('CursorLineNr',  {'fg': s:dark_blue, 'bg': s:bg})
 call s:h('Question',      {'fg': s:red})
+
+" status line
 call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:blue})
+call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': s:italic, 'cterm': s:italic})
 call s:h('IStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:red})
 call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:blue})
 
-call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': s:italic, 'cterm': s:italic})
 call s:h('VertSplit',     {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
 call s:h('Title',         {'fg': s:dark_blue})
 call s:h('Visual',        {'fg': s:bg, 'bg': s:visual})
