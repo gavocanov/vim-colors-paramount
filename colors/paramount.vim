@@ -11,7 +11,6 @@
 " https://github.com/reedes/vim-colors-pencil
 " https://github.com/reedes/vim-colors-off
 "
-"""
 if v:version > 580
   hi clear
   if exists('syntax_on')
@@ -102,14 +101,14 @@ function! s:h(group, style)
     \ 'cterm='   (has_key(a:style, 'cterm') ? a:style.cterm    : 'NONE')
 endfunction
 
-call s:h('Normal',        {'bg': s:bg, 'fg': s:norm})
+call s:h('Normal',        {'bg': s:bg, 'fg': s:light_gray})
 
 " restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
 if &background != s:background
    execute 'set background=' . s:background
 endif
 
-call s:h('Cursor',        {'bg': s:purple,       'fg':   s:norm })
+call s:h('Cursor',        {'bg': s:purple,        'fg':   s:norm })
 call s:h('Comment',       {'fg': s:lighter_black, 'gui':  s:italic, 'cterm': s:italic})
 
 call s:h('Constant',      {'fg': s:purple})
@@ -119,10 +118,7 @@ hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
 
-"call s:h('Identifier',    {'fg': s:dark_blue})
 call s:h('Identifier',    {'fg': s:light_gray})
-" hi! link Identifier       Normal
-" hi! link Function         Identifier
 hi! link Function         Normal
 
 call s:h('Statement',     {'fg': s:norm_subtle})
@@ -145,7 +141,6 @@ hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-" call s:h('Special',       {'fg': s:norm_subtle, 'gui': s:italic, 'cterm': s:italic})
 call s:h('Special',       {'fg': s:norm_subtle})
 hi! link SpecialChar      Special
 hi! link Tag              Special
@@ -209,7 +204,6 @@ call s:h('TabLine',       {'fg': s:norm, 'bg': s:bg_very_subtle})
 call s:h('TabLineSel',    {'fg': s:purple, 'bg': s:bg_subtle, 'gui': s:bold, 'cterm': s:bold})
 call s:h('TabLineFill',   {'fg': s:norm, 'bg': s:bg_very_subtle})
 call s:h('CursorColumn',  {'bg': s:bg_very_subtle})
-" call s:h('CursorLine',    {'bg': s:bg})
 hi!  CursorLine           term=NONE cterm=NONE guibg=NONE
 call s:h('ColorColumn',   {'bg': s:bg_very_subtle})
 
@@ -222,21 +216,6 @@ call s:h('htmlH3',        {'bg': s:bg, 'fg': s:norm})
 call s:h('htmlH4',        {'bg': s:bg, 'fg': s:norm})
 call s:h('htmlH5',        {'bg': s:bg, 'fg': s:norm})
 call s:h('htmlH6',        {'bg': s:bg, 'fg': s:norm})
-
-" Synatastic
-" call s:h('SyntasticWarningSign',    {'fg': s:yellow})
-" call s:h('SyntasticWarning',        {'bg': s:yellow, 'fg': s:black, 'gui': s:bold, 'cterm': s:bold})
-" call s:h('SyntasticErrorSign',      {'fg': s:red})
-" call s:h('SyntasticError',          {'bg': s:red, 'fg': s:white, 'gui': s:bold, 'cterm': s:bold})
-
-" Signify, git-gutter
-" hi link SignifySignAdd              LineNr
-" hi link SignifySignDelete           LineNr
-" hi link SignifySignChange           LineNr
-" hi link GitGutterAdd                LineNr
-" hi link GitGutterDelete             LineNr
-" hi link GitGutterChange             LineNr
-" hi link GitGutterChangeDelete       LineNr
 " **********************************************************************************************************************
 " My custom stuff
 " **********************************************************************************************************************
@@ -272,8 +251,6 @@ hi link  SignifySignDelete         SignNoBg
 hi link  SignifySignChangeDelete   SignNoBg
 " Match parens
 hi link  MatchParen                Search
-" I want just CursorLineNR
-" hi clear CursorLine
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
@@ -327,10 +304,8 @@ hi link javaClassDecl              Statement
 hi link javaStorageClass           Statement
 hi link javaMethodDecl             Statement
 hi link javaTypeDef                Statement
-" hi link javaType                   Statement
 "  Idris
 hi link idrisStructure             Statement
-" hi link idrisType                  SpecialKey
 hi link idrisOperators             Delimiter
 hi link idrisDirective             Title
 hi link idrisModule                Title
@@ -339,11 +314,9 @@ hi link idrisLet                   Keyword
 hi link idrisImport                Keyword
 " Purescript
 hi link purescriptTypeVar          Title
-" hi link purescriptType             SpecialKey
 hi link purescriptClassName        Type
 hi link purescriptOperator         Delimiter
 hi link purescriptOperatorType     Delimiter
 hi link purescriptOperatorTypeSig  Delimiter
 hi link purescriptIdentifier       Identifier
-hi link purescriptFunction         Normal
 " **********************************************************************************************************************
