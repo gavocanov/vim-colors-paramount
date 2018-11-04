@@ -37,10 +37,10 @@ let s:black           = { 'gui': '#121212', 'cterm': '233' }
 let s:medium_gray     = { 'gui': '#767676', 'cterm': '243' }
 let s:white           = { 'gui': '#F1F1F1', 'cterm': '15'  }
 let s:actual_white    = { 'gui': '#FFFFFF', 'cterm': '231' }
-let s:subtle_black    = { 'gui': '#303030', 'cterm': '236' }
+let s:subtle_black    = { 'gui': '#181818', 'cterm': '234' }
 let s:light_black     = { 'gui': '#262626', 'cterm': '235' }
 let s:lighter_black   = { 'gui': '#4E4E4E', 'cterm': '239' }
-let s:light_gray      = { 'gui': '#A8A8A8', 'cterm': '248' }
+let s:light_gray      = { 'gui': '#A0A0A0', 'cterm': '248' }
 let s:lighter_gray    = { 'gui': '#C6C6C6', 'cterm': '251' }
 let s:lightest_gray   = { 'gui': '#EEEEEE', 'cterm': '255' }
 let s:pink            = { 'gui': '#fb007a', 'cterm': '9'   }
@@ -165,10 +165,10 @@ call s:h('CursorLineNr',  {'fg': s:dark_blue, 'bg': s:bg})
 call s:h('Question',      {'fg': s:red})
 
 " status line
-call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:blue})
-call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:medium_gray, 'gui': s:italic, 'cterm': s:italic})
+call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:medium_gray})
+call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:bg})
 call s:h('IStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:red})
-call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:blue})
+call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:medium_gray})
 
 call s:h('VertSplit',     {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
 call s:h('Title',         {'fg': s:dark_blue})
@@ -200,12 +200,13 @@ call s:h('Pmenu',         {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('PmenuSel',      {'fg': s:norm, 'bg': s:purple})
 call s:h('PmenuSbar',     {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('PmenuThumb',    {'fg': s:norm, 'bg': s:bg_subtle})
-call s:h('TabLine',       {'fg': s:norm, 'bg': s:bg_very_subtle})
-call s:h('TabLineSel',    {'fg': s:purple, 'bg': s:bg_subtle, 'gui': s:bold, 'cterm': s:bold})
-call s:h('TabLineFill',   {'fg': s:norm, 'bg': s:bg_very_subtle})
 call s:h('CursorColumn',  {'bg': s:bg_very_subtle})
 hi!  CursorLine           term=NONE cterm=NONE guibg=NONE
 call s:h('ColorColumn',   {'bg': s:bg_very_subtle})
+
+call s:h('TabLine',       {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
+call s:h('TabLineSel',    {'fg': s:norm,      'bg': s:bg_very_subtle, 'gui': s:bold, 'cterm': s:bold})
+call s:h('TabLineFill',   {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
 
 call s:h('MatchParen',    {'bg': s:bg_subtle, 'fg': s:norm})
 call s:h('qfLineNr',      {'fg': s:medium_gray})
@@ -227,6 +228,8 @@ call s:h('WarnNoBg',                {'fg': s:dark_yellow, 'gui': s:italic, 'cter
 call s:h('WarnSignNoBg',            {'fg': s:dark_yellow, 'bg': s:bg})
 call s:h('WarnBg',                  {'bg': s:light_black})
 call s:h('SignNoBg',                {'fg': s:dark_green, 'bg': s:bg})
+" BufTabLine
+hi link  BufTabLineActive          TabLineSel
 " ALE
 hi link  ALEErrorSign              ErrorSignNoBg
 hi link  ALEError                  ErrorNoBg
