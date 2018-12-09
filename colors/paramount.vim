@@ -322,4 +322,16 @@ hi link purescriptOperator         Delimiter
 hi link purescriptOperatorType     Delimiter
 hi link purescriptOperatorTypeSig  Delimiter
 hi link purescriptIdentifier       Identifier
+" Clojure
+hi link clojureBoolean   Title
+hi link clojureCond      Keyword
+hi link clojureConstant  Statement
+hi link clojureDefine    Statement
+hi link clojureException Statement
+hi link clojureFunc      Statement
+hi link clojureMacro     Statement
+hi link clojureRepeat    Statement
+hi link clojureSpecial   SpecialKey
+hi link clojureVariable  Title
+
 " **********************************************************************************************************************
