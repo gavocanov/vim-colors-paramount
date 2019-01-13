@@ -229,14 +229,38 @@ call s:h('WarnSignNoBg',            {'fg': s:dark_yellow, 'bg': s:bg})
 call s:h('WarnBg',                  {'bg': s:light_black})
 call s:h('SignNoBg',                {'fg': s:dark_green, 'bg': s:bg})
 " BufTabLine
-hi link  BufTabLineActive          TabLineSel
+hi link BufTabLineActive           TabLineSel
 " ALE
-hi link  ALEErrorSign              ErrorSignNoBg
-hi link  ALEError                  ErrorNoBg
-hi link  ALEErrorLine              ErrorBg
-hi link  ALEWarningSign            WarnSignNoBg
-hi link  ALEWarning                WarnNoBg
-hi link  ALEWarningLine            WarnNoBg
+hi link ALEInfoSign                WarnSignNoBg
+hi link ALEInfo                    WarnBg
+hi link ALEErrorSign               ErrorSignNoBg
+hi link ALEError                   ErrorNoBg
+hi link ALEErrorLine               ErrorBg
+hi link ALEWarningSign             WarnSignNoBg
+hi link ALEWarning                 WarnNoBg
+hi link ALEWarningLine             WarnNoBg
+hi link ALEVirtualTextError        WarnBg
+hi link ALEVirtualTextWarning      WarnBg
+hi link ALEVirtualTextInfo         WarnBg
+hi link ALEVirtualTextStyleError   WarnBg
+hi link ALEVirtualTextStyleWarning WarnBg
+" CoC
+hi link CocErrorSign 			   ALEErrorSign
+hi link CocWarningSign 			   ALEWarningSign
+hi link CocInfoSign 			   ALEInfoSign
+hi link CocHintSign 			   ALEInfoSign
+hi link CocErrorHighlight 		   ALEErrorSign
+hi link CocWarningHighlight        ALEWarningSign
+hi link CocInfoHighlight 		   ALEInfoSign
+hi link CocHintHighlight 		   ALEInfoSign
+hi link CocHighlightText 		   SignNoBg
+hi link CocHighlightTextRead 	   WarnNoBg
+hi link CocHighlightTextWrite      ErrorNoBg
+hi link CocErrorLine 			   ALEErrorSign
+hi link CocWarningLine 			   ALEWarningSign
+hi link CocInfoLine 			   ALEInfoSign
+hi link CocHintLine 			   ALEInfoSign
+hi link CocCodeLens 			   ALEInfoSign
 " Syntastic
 hi link  SyntasticWarningSign      WarnSignNoBg
 hi link  SyntasticWarning          WarnNoBg
