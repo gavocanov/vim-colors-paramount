@@ -166,7 +166,7 @@ call s:h('Question',      {'fg': s:red})
 
 " status line
 call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:medium_gray})
-call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:bg})
+call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
 call s:h('IStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:red})
 call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:medium_gray})
 
@@ -262,20 +262,20 @@ hi link CocInfoLine 			   ALEInfoSign
 hi link CocHintLine 			   ALEInfoSign
 hi link CocCodeLens 			   ALEInfoSign
 " Syntastic
-hi link  SyntasticWarningSign      WarnSignNoBg
-hi link  SyntasticWarning          WarnNoBg
-hi link  SyntasticErrorSign        ErrorSignNoBg
-hi link  SyntasticError            ErrorBg
+hi link SyntasticWarningSign      WarnSignNoBg
+hi link SyntasticWarning          WarnNoBg
+hi link SyntasticErrorSign        ErrorSignNoBg
+hi link SyntasticError            ErrorBg
 " GitGutter
-hi link  GitGutterAdd              SignNoBg
-hi link  GitGutterChange           SignNoBg
-hi link  GitGutterDelete           SignNoBg
-hi link  GitGutterChangeDelete     SignNoBg
+hi link GitGutterAdd              SignNoBg
+hi link GitGutterChange           SignNoBg
+hi link GitGutterDelete           SignNoBg
+hi link GitGutterChangeDelete     SignNoBg
 " Signify
-hi link  SignifySignAdd            SignNoBg
-hi link  SignifySignChange         SignNoBg
-hi link  SignifySignDelete         SignNoBg
-hi link  SignifySignChangeDelete   SignNoBg
+hi link SignifySignAdd            SignNoBg
+hi link SignifySignChange         SignNoBg
+hi link SignifySignDelete         SignNoBg
+hi link SignifySignChangeDelete   SignNoBg
 " Match parens
 hi link  MatchParen                Search
 " **********************************************************************************************************************
@@ -357,5 +357,4 @@ hi link clojureMacro     Statement
 hi link clojureRepeat    Statement
 hi link clojureSpecial   SpecialKey
 hi link clojureVariable  Title
-
 " **********************************************************************************************************************
