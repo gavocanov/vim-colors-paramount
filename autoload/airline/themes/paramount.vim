@@ -7,8 +7,8 @@ let g:airline#themes#paramount#palette.normal = airline#themes#generate_color_ma
 let g:airline#themes#paramount#palette.accents = { 'red': [ '#c30771' , '' , 1 , ''  ] }
 let pal = g:airline#themes#paramount#palette
 for item in ['insert', 'replace', 'visual', 'inactive', 'ctrlp']
-    exe "let pal.".item." = pal.normal"
+    exe 'let pal.'.item.' = pal.normal'
     for suffix in ['_modified', '_paste']
-        exe "let pal.".item.suffix. " = pal.normal"
+        exe 'let pal.'.item.suffix. ' = pal.normal'
     endfor
 endfor
