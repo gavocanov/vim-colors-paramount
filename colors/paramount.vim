@@ -87,7 +87,7 @@ else
     let s:red             = s:dark_red
     let s:visual          = s:dark_purple
     let s:yellow          = s:dark_yellow
-" endif
+endif
 
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
