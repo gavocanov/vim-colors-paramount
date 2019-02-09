@@ -361,4 +361,5 @@ hi link clojureVariable  Title
 hi link scalaKeywordModifier        Keyword
 hi link scalaSpecialFunction        Keyword
 hi link scalaInstanceDeclaration    Normal
+hi link scalaTypeDeclaration        Statement
 " **********************************************************************************************************************
