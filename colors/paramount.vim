@@ -357,4 +357,8 @@ hi link clojureMacro     Statement
 hi link clojureRepeat    Statement
 hi link clojureSpecial   SpecialKey
 hi link clojureVariable  Title
+" Scala
+hi link scalaKeywordModifier        Keyword
+hi link scalaSpecialFunction        Keyword
+hi link scalaInstanceDeclaration    Normal
 " **********************************************************************************************************************
