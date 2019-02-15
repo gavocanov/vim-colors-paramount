@@ -315,7 +315,7 @@ hi link ktEscapedName               Title
 "  Haskell
 hi link haskellDeclKeyword         Statement
 hi link haskellDecl                Statement
-" hi link haskellType                SpecialKey
+hi link haskellType                SpecialKey
 hi link haskellLet                 Statement
 hi link haskellWhere               Statement
 hi link haskellPragma              Title
