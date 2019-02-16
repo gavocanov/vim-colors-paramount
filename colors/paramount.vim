@@ -247,9 +247,10 @@ hi link CocWarningHighlight        WarnBg
 hi link CocInfoHighlight 		   InfoBg
 hi link CocHintHighlight 		   InfoBg
 
-hi link CocHighlightText 		   Search
-hi link CocHighlightTextRead 	   Search
-hi link CocHighlightTextWrite      Search
+call s:h('CocHighlight',           {'gui': s:bold, 'cterm': s:bold})
+hi link CocHighlightText 		   CocHighlight
+hi link CocHighlightTextRead 	   CocHighlight
+hi link CocHighlightTextWrite      CocHighlight
 
 hi link CocErrorLine 			   ErrorBg
 hi link CocWarningLine 			   WarnBg
@@ -288,7 +289,7 @@ hi link SignifySignChange         Sign
 hi link SignifySignDelete         Sign
 hi link SignifySignChangeDelete   Sign
 " Match parens
-hi link  MatchParen               Search
+" hi link  MatchParen               Search
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
