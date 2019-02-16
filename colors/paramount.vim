@@ -21,16 +21,18 @@ endif
 let g:colors_name='paramount'
 
 " global settings
-if !exists('g:colors_paramount_bi')
-    let g:colors_paramount_bi = 0
+if !exists('g:colors_paramount_biu')
+    let g:colors_paramount_biu = 0
 endif
 
-if g:colors_paramount_bi
+if g:colors_paramount_biu
     let s:bold = 'bold'
-    let s:italic = 'italic'
+    let s:ital = 'italic'
+    let s:unde = 'underline'
 else
     let s:bold = 'NONE'
-    let s:italic = 'NONE'
+    let s:ital = 'NONE'
+    let s:unde = 'NONE'
 endif
 
 let s:black           = { 'gui': '#121212', 'cterm': '233' }
@@ -109,7 +111,7 @@ if &background != s:background
 endif
 
 call s:h('Cursor',        {'bg': s:purple,        'fg':   s:norm })
-call s:h('Comment',       {'fg': s:lighter_black, 'gui':  s:italic, 'cterm': s:italic})
+call s:h('Comment',       {'fg': s:lighter_black, 'gui':  s:ital, 'cterm': s:ital})
 
 call s:h('Constant',      {'fg': s:purple})
 hi! link Character        Constant
@@ -148,10 +150,10 @@ hi! link Delimiter        Special
 hi! link SpecialComment   Special
 hi! link Debug            Special
 
-call s:h('Underlined',    {'fg': s:norm, 'gui': 'underline', 'cterm': 'underline'})
+call s:h('Underlined',    {'fg': s:norm, 'gui': s:unde, 'cterm': s:unde})
 call s:h('Ignore',        {'fg': s:bg_very_subtle})
 call s:h('Error',         {'fg': s:light_red, 'cterm': s:bold})
-call s:h('Todo',          {'fg': s:purple, 'gui': 'underline', 'cterm': 'underline'})
+call s:h('Todo',          {'fg': s:purple, 'gui': s:unde, 'cterm': s:unde})
 call s:h('SpecialKey',    {'fg': s:light_green})
 call s:h('NonText',       {'fg': s:bg})
 call s:h('Directory',     {'fg': s:dark_blue})
@@ -185,15 +187,15 @@ call s:h('DiffText',      {'fg': s:dark_blue})
 call s:h('SignColumn',    {'bg': s:bg})
 
 if has('gui_running')
-    call s:h('SpellBad',    {'gui': 'underline', 'sp': s:red})
-    call s:h('SpellCap',    {'gui': 'underline', 'sp': s:light_green})
-    call s:h('SpellRare',   {'gui': 'underline', 'sp': s:pink})
-    call s:h('SpellLocal',  {'gui': 'underline', 'sp': s:dark_green})
+    call s:h('SpellBad',    {'gui': s:unde, 'sp': s:red})
+    call s:h('SpellCap',    {'gui': s:unde, 'sp': s:light_green})
+    call s:h('SpellRare',   {'gui': s:unde, 'sp': s:pink})
+    call s:h('SpellLocal',  {'gui': s:unde, 'sp': s:dark_green})
 else
-    call s:h('SpellBad',    {'cterm': 'underline', 'fg': s:red})
-    call s:h('SpellCap',    {'cterm': 'underline', 'fg': s:light_green})
-    call s:h('SpellRare',   {'cterm': 'underline', 'fg': s:pink})
-    call s:h('SpellLocal',  {'cterm': 'underline', 'fg': s:dark_green})
+    call s:h('SpellBad',    {'cterm': s:unde, 'fg': s:red})
+    call s:h('SpellCap',    {'cterm': s:unde, 'fg': s:light_green})
+    call s:h('SpellRare',   {'cterm': s:unde, 'fg': s:pink})
+    call s:h('SpellLocal',  {'cterm': s:unde, 'fg': s:dark_green})
 endif
 
 call s:h('Pmenu',         {'fg': s:norm, 'bg': s:bg_subtle})
@@ -221,22 +223,48 @@ call s:h('htmlH6',        {'bg': s:bg, 'fg': s:norm})
 " My custom stuff
 " **********************************************************************************************************************
 " err/warnings
-call s:h('ErrorNoBg',               {'fg': s:orange, 'gui': s:italic, 'cterm': s:italic})
-call s:h('ErrorSignNoBg',           {'fg': s:orange, 'bg': s:bg})
-call s:h('ErrorBg',                 {'fg': s:orange, 'gui': s:italic, 'cterm': s:italic, 'bg': s:light_black})
-call s:h('WarnNoBg',                {'fg': s:dark_yellow, 'gui': s:italic, 'cterm': s:italic})
-call s:h('WarnSignNoBg',            {'fg': s:dark_yellow, 'bg': s:bg})
-call s:h('WarnBg',                  {'bg': s:light_black})
-call s:h('SignNoBg',                {'fg': s:dark_green, 'bg': s:bg})
+" no background
+call s:h('ErrorNoBg',               {'gui': s:ital, 'cterm': s:ital})
+call s:h('WarnNoBg',                {'gui': s:ital, 'cterm': s:ital})
+call s:h('InfoNoBg',                {'gui': s:ital, 'cterm': s:ital})
+" with background
+call s:h('ErrorBg',                 {'bg': s:bg_very_subtle})
+call s:h('WarnBg',                  {'bg': s:bg_very_subtle})
+call s:h('InfoBg',                  {'bg': s:bg_very_subtle})
+" signs
+call s:h('ErrorSign',               {'fg': s:orange,        'bg': s:bg, 'gui': s:ital, 'cterm': s:ital})
+call s:h('WarnSign',                {'fg': s:dark_yellow,   'bg': s:bg, 'gui': s:ital, 'cterm': s:ital})
+call s:h('InfoSign',                {'fg': s:lighter_black, 'bg': s:bg, 'gui': s:ital, 'cterm': s:ital})
+call s:h('Sign',                    {'fg': s:dark_green,    'bg': s:bg})
+" CoC
+hi link CocErrorSign 			   ErrorSign
+hi link CocWarningSign 			   WarnSign
+hi link CocInfoSign 			   InfoSign
+hi link CocHintSign 			   InfoSign
+
+hi link CocErrorHighlight 		   ErrorBg
+hi link CocWarningHighlight        WarnBg
+hi link CocInfoHighlight 		   InfoBg
+hi link CocHintHighlight 		   InfoBg
+
+hi link CocHighlightText 		   Search
+hi link CocHighlightTextRead 	   Search
+hi link CocHighlightTextWrite      Search
+
+hi link CocErrorLine 			   ErrorBg
+hi link CocWarningLine 			   WarnBg
+hi link CocInfoLine 			   InfoBg
+hi link CocHintLine 			   InfoBg
+hi link CocCodeLens 			   InfoBg
 " BufTabLine
 hi link BufTabLineActive           TabLineSel
 " ALE
-hi link ALEInfoSign                WarnSignNoBg
+hi link ALEInfoSign                WarnSign
 hi link ALEInfo                    WarnBg
-hi link ALEErrorSign               ErrorSignNoBg
+hi link ALEErrorSign               ErrorSign
 hi link ALEError                   ErrorNoBg
 hi link ALEErrorLine               ErrorBg
-hi link ALEWarningSign             WarnSignNoBg
+hi link ALEWarningSign             WarnSign
 hi link ALEWarning                 WarnNoBg
 hi link ALEWarningLine             WarnNoBg
 hi link ALEVirtualTextError        WarnBg
@@ -244,40 +272,23 @@ hi link ALEVirtualTextWarning      WarnBg
 hi link ALEVirtualTextInfo         WarnBg
 hi link ALEVirtualTextStyleError   WarnBg
 hi link ALEVirtualTextStyleWarning WarnBg
-" CoC
-hi link CocErrorSign 			   ALEErrorSign
-hi link CocWarningSign 			   ALEWarningSign
-hi link CocInfoSign 			   ALEInfoSign
-hi link CocHintSign 			   ALEInfoSign
-hi link CocErrorHighlight 		   ALEErrorSign
-hi link CocWarningHighlight        ALEWarningSign
-hi link CocInfoHighlight 		   ALEInfoSign
-hi link CocHintHighlight 		   ALEInfoSign
-hi link CocHighlightText 		   SignNoBg
-hi link CocHighlightTextRead 	   WarnNoBg
-hi link CocHighlightTextWrite      ErrorNoBg
-hi link CocErrorLine 			   ALEErrorSign
-hi link CocWarningLine 			   ALEWarningSign
-hi link CocInfoLine 			   ALEInfoSign
-hi link CocHintLine 			   ALEInfoSign
-hi link CocCodeLens 			   ALEInfoSign
 " Syntastic
-hi link SyntasticWarningSign      WarnSignNoBg
+hi link SyntasticWarningSign      WarnSign
 hi link SyntasticWarning          WarnNoBg
-hi link SyntasticErrorSign        ErrorSignNoBg
+hi link SyntasticErrorSign        ErrorSign
 hi link SyntasticError            ErrorBg
 " GitGutter
-hi link GitGutterAdd              SignNoBg
-hi link GitGutterChange           SignNoBg
-hi link GitGutterDelete           SignNoBg
-hi link GitGutterChangeDelete     SignNoBg
+hi link GitGutterAdd              Sign
+hi link GitGutterChange           Sign
+hi link GitGutterDelete           Sign
+hi link GitGutterChangeDelete     Sign
 " Signify
-hi link SignifySignAdd            SignNoBg
-hi link SignifySignChange         SignNoBg
-hi link SignifySignDelete         SignNoBg
-hi link SignifySignChangeDelete   SignNoBg
+hi link SignifySignAdd            Sign
+hi link SignifySignChange         Sign
+hi link SignifySignDelete         Sign
+hi link SignifySignChangeDelete   Sign
 " Match parens
-hi link  MatchParen                Search
+hi link  MatchParen               Search
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
