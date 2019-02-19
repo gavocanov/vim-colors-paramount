@@ -232,9 +232,9 @@ call s:h('ErrorBg',                 {'bg': s:bg_very_subtle})
 call s:h('WarnBg',                  {'bg': s:bg_very_subtle})
 call s:h('InfoBg',                  {'bg': s:bg_very_subtle})
 " signs
-call s:h('ErrorSign',               {'fg': s:orange,        'bg': s:bg, 'gui': s:ital, 'cterm': s:ital})
-call s:h('WarnSign',                {'fg': s:dark_yellow,   'bg': s:bg, 'gui': s:ital, 'cterm': s:ital})
-call s:h('InfoSign',                {'fg': s:lighter_black, 'bg': s:bg, 'gui': s:ital, 'cterm': s:ital})
+call s:h('ErrorSign',               {'fg': s:orange,        'bg': s:bg})
+call s:h('WarnSign',                {'fg': s:dark_yellow,   'bg': s:bg})
+call s:h('InfoSign',                {'fg': s:lighter_black, 'bg': s:bg})
 call s:h('Sign',                    {'fg': s:dark_green,    'bg': s:bg})
 " CoC
 hi link CocErrorSign 			   ErrorSign
@@ -251,6 +251,9 @@ call s:h('CocHighlight',           {'gui': s:bold, 'cterm': s:bold})
 hi link CocHighlightText 		   CocHighlight
 hi link CocHighlightTextRead 	   CocHighlight
 hi link CocHighlightTextWrite      CocHighlight
+
+call s:h('YankHighlight',          {'fg': s:black, 'bg': s:orange})
+hi link HighlightedyankRegion      YankHighlight
 
 hi link CocErrorLine 			   ErrorBg
 hi link CocWarningLine 			   WarnBg
