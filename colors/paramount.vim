@@ -259,7 +259,9 @@ hi link CocErrorLine 			   ErrorBg
 hi link CocWarningLine 			   WarnBg
 hi link CocInfoLine 			   InfoBg
 hi link CocHintLine 			   InfoBg
-hi link CocCodeLens 			   InfoBg
+
+call s:h('CodeLens',               {'fg': s:bg_subtle})
+hi link CocCodeLens 			   CodeLens
 " BufTabLine
 hi link BufTabLineActive           TabLineSel
 " ALE
