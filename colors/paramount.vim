@@ -231,21 +231,23 @@ call s:h('InfoNoBg',                {'gui': s:ital, 'cterm': s:ital})
 call s:h('ErrorBg',                 {'bg': s:bg_very_subtle})
 call s:h('WarnBg',                  {'bg': s:bg_very_subtle})
 call s:h('InfoBg',                  {'bg': s:bg_very_subtle})
+call s:h('HintBg',                  {'bg': s:bg})
 " signs
 call s:h('ErrorSign',               {'fg': s:orange,        'bg': s:bg})
 call s:h('WarnSign',                {'fg': s:dark_yellow,   'bg': s:bg})
 call s:h('InfoSign',                {'fg': s:lighter_black, 'bg': s:bg})
+call s:h('HintSign',                {'fg': s:lighter_black, 'bg': s:bg})
 call s:h('Sign',                    {'fg': s:dark_green,    'bg': s:bg})
 " CoC
 hi link CocErrorSign 			   ErrorSign
 hi link CocWarningSign 			   WarnSign
 hi link CocInfoSign 			   InfoSign
-hi link CocHintSign 			   InfoSign
+hi link CocHintSign 			   HintSign
 
 hi link CocErrorHighlight 		   ErrorBg
 hi link CocWarningHighlight        WarnBg
 hi link CocInfoHighlight 		   InfoBg
-hi link CocHintHighlight 		   InfoBg
+hi link CocHintHighlight 		   HintBg
 
 call s:h('CocHighlight',           {'gui': s:bold, 'cterm': s:bold})
 hi link CocHighlightText 		   CocHighlight
@@ -258,7 +260,7 @@ hi link HighlightedyankRegion      YankHighlight
 hi link CocErrorLine 			   ErrorBg
 hi link CocWarningLine 			   WarnBg
 hi link CocInfoLine 			   InfoBg
-hi link CocHintLine 			   InfoBg
+hi link CocHintLine 			   HintBg
 
 call s:h('CodeLens',               {'fg': s:bg_subtle})
 hi link CocCodeLens 			   CodeLens
