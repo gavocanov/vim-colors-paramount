@@ -35,49 +35,24 @@ else
     let s:underline = 'NONE'
 endif
 
-let s:black           = { 'gui': '#121212', 'cterm': '233' }
-let s:subtle_black    = { 'gui': '#181818', 'cterm': '234' }
-let s:lighter_black   = { 'gui': '#4E4E4E', 'cterm': '239' }
-
-let s:medium_gray     = { 'gui': '#767676', 'cterm': '243' }
-let s:light_gray      = { 'gui': '#A0A0A0', 'cterm': '248' }
-
-let s:light_red       = { 'gui': '#E32791', 'cterm': '1'   }
-let s:dark_red        = { 'gui': '#cc241d', 'cterm': '1'   }
-
-let s:light_blue      = { 'gui': '#005F87', 'cterm': '153' }
-let s:dark_blue       = { 'gui': '#458588', 'cterm': '32'  }
-
-let s:light_cyan      = { 'gui': '#4FB8CC', 'cterm': '14'  }
-let s:dark_cyan       = { 'gui': '#689d5a', 'cterm': '6'   }
-
-let s:light_green     = { 'gui': '#10A778', 'cterm': '10'  }
-let s:dark_green      = { 'gui': '#98971a', 'cterm': '2'   }
-
-let s:light_purple    = { 'gui': '#a790d5', 'cterm': '140' }
-let s:dark_purple     = { 'gui': '#b16286', 'cterm': '134' }
-
-let s:light_yellow    = { 'gui': '#ffff87', 'cterm': '228' }
-let s:dark_yellow     = { 'gui': '#d79921', 'cterm': '3'   }
-
-let s:pink            = { 'gui': '#fb007a', 'cterm': '9'   }
-let s:orange          = { 'gui': '#D75F5F', 'cterm': '167' }
-
 let s:background = &background
 if &background ==? 'dark'
-    let s:bg              = s:black
-    let s:bg_subtle       = s:lighter_black
-    let s:bg_very_subtle  = s:subtle_black
-    let s:norm            = s:light_gray
-    let s:norm_subtle     = s:medium_gray
+    let s:bg              = { 'gui': '#121212', 'cterm': '233' }
+    let s:bg_subtle       = { 'gui': '#4E4E4E', 'cterm': '239' }
+    let s:bg_very_subtle  = { 'gui': '#181818', 'cterm': '234' }
+    let s:norm            = { 'gui': '#A0A0A0', 'cterm': '248' }
+    let s:norm_subtle     = { 'gui': '#767676', 'cterm': '243' }
 
-    let s:blue            = s:light_blue
-    let s:purple          = s:light_purple
-    let s:cyan            = s:light_cyan
-    let s:green           = s:light_green
-    let s:red             = s:light_red
-    let s:visual          = s:light_purple
-    let s:yellow          = s:light_yellow
+    let s:blue            = { 'gui': '#005F87', 'cterm': '153' }
+    let s:purple          = { 'gui': '#a790d5', 'cterm': '140' }
+    let s:cyan            = { 'gui': '#4FB8CC', 'cterm': '14'  }
+    let s:green           = { 'gui': '#10A778', 'cterm': '10'  }
+    let s:red             = { 'gui': '#E32791', 'cterm': '1'   }
+    let s:yellow          = { 'gui': '#ffff87', 'cterm': '228' }
+    let s:pink            = { 'gui': '#fb007a', 'cterm': '9'   }
+    let s:orange          = { 'gui': '#D75F5F', 'cterm': '167' }
+
+    let s:visual          = s:purple
 else
     let s:bg              = {'gui': '#ebdbb2', 'cterm': '223'}
     let s:bg_subtle       = {'gui': '#dbae53', 'cterm': '248'}
@@ -85,13 +60,16 @@ else
     let s:norm            = {'gui': '#665c54', 'cterm': '241'}
     let s:norm_subtle     = {'gui': '#928374', 'cterm': '245'}
 
-    let s:blue            = s:dark_blue
-    let s:purple          = s:dark_purple
-    let s:cyan            = s:dark_cyan
-    let s:green           = s:dark_green
-    let s:red             = s:dark_red
-    let s:visual          = s:dark_purple
-    let s:yellow          = s:dark_yellow
+    let s:blue            = { 'gui': '#458588', 'cterm': '32'  }
+    let s:purple          = { 'gui': '#b16286', 'cterm': '134' }
+    let s:cyan            = { 'gui': '#689d5a', 'cterm': '6'   }
+    let s:green           = { 'gui': '#98971a', 'cterm': '2'   }
+    let s:red             = { 'gui': '#cc241d', 'cterm': '1'   }
+    let s:yellow          = { 'gui': '#d79921', 'cterm': '3'   }
+    let s:pink            = { 'gui': '#b16286', 'cterm': '5'   }
+    let s:orange          = { 'gui': '#d65d0e', 'cterm': '166' }
+
+    let s:visual          = s:purple
 endif
 
 " https://github.com/noahfrederick/vim-hemisu/
@@ -117,7 +95,7 @@ endif
 call s:h('Cursor',        {'fg': s:norm, 'bg': s:purple})
 call s:h('Comment',       {'fg': s:bg_subtle, 'gui': s:italic, 'cterm': s:italic})
 call s:h('Constant',      {'fg': s:purple})
-call s:h('Identifier',    {'fg': s:norm_subtle, 'gui': s:bold, 'cterm': s:bold})
+call s:h('Identifier',    {'fg': s:norm_subtle})
 call s:h('Statement',     {'fg': s:norm_subtle})
 call s:h('Operator',      {'fg': s:norm, 'cterm': s:bold, 'gui': s:bold})
 call s:h('PreProc',       {'fg': s:norm_subtle})
@@ -148,9 +126,9 @@ call s:h('DiffAdd',       {'fg': s:green})
 call s:h('DiffDelete',    {'fg': s:red})
 call s:h('DiffChange',    {'fg': s:yellow})
 call s:h('DiffText',      {'fg': s:blue})
-call s:h('Pmenu',         {'fg': s:norm, 'bg': s:bg_very_subtle})
+call s:h('Pmenu',         {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('PmenuSel',      {'fg': s:bg,   'bg': s:norm, 'gui': s:bold, 'cterm': s:bold})
-call s:h('PmenuSbar',     {'fg': s:norm, 'bg': s:bg_very_subtle})
+call s:h('PmenuSbar',     {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('PmenuThumb',    {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('TabLine',       {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
 call s:h('TabLineSel',    {'fg': s:norm,      'bg': s:bg_very_subtle, 'gui': s:bold, 'cterm': s:bold})
@@ -244,8 +222,7 @@ hi link CocHighlightText 		   IncSearch
 hi link CocHighlightTextRead 	   IncSearch
 hi link CocHighlightTextWrite      IncSearch
 
-call s:h('YankHighlight',          {'fg': s:black, 'bg': s:orange})
-hi link HighlightedyankRegion      YankHighlight
+hi link HighlightedyankRegion      IncSearch
 
 hi link CocErrorLine 			   ErrorBg
 hi link CocWarningLine 			   WarnBg
