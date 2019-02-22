@@ -52,13 +52,14 @@ if &background ==? 'dark'
     let s:pink            = { 'gui': '#fb007a', 'cterm': '9'   }
     let s:orange          = { 'gui': '#D75F5F', 'cterm': '167' }
 
+    let s:string          = s:purple
     let s:visual          = s:purple
 else
-    let s:bg              = {'gui': '#ebdbb2', 'cterm': '223'}
-    let s:bg_subtle       = {'gui': '#dbae53', 'cterm': '248'}
-    let s:bg_very_subtle  = {'gui': '#d5c4a1', 'cterm': '250'}
-    let s:norm_subtle     = {'gui': '#665c54', 'cterm': '241'}
-    let s:norm            = {'gui': '#928374', 'cterm': '245'}
+    let s:bg              = {'gui': '#d5c4a1', 'cterm': '250'}
+    let s:bg_subtle       = {'gui': '#928374', 'cterm': '244'}
+    let s:bg_very_subtle  = {'gui': '#bdae93', 'cterm': '248'}
+    let s:norm            = {'gui': '#504945', 'cterm': '239'}
+    let s:norm_subtle     = {'gui': '#7c6f64', 'cterm': '243'}
 
     let s:blue            = { 'gui': '#458588', 'cterm': '32'  }
     let s:purple          = { 'gui': '#b16286', 'cterm': '134' }
@@ -69,7 +70,8 @@ else
     let s:pink            = { 'gui': '#b16286', 'cterm': '5'   }
     let s:orange          = { 'gui': '#d65d0e', 'cterm': '166' }
 
-    let s:visual          = s:purple
+    let s:string          = s:green
+    let s:visual          = s:norm_subtle
 endif
 
 " https://github.com/noahfrederick/vim-hemisu/
@@ -84,7 +86,6 @@ function! s:h(group, style)
                 \ 'cterm='   (has_key(a:style, 'cterm') ? a:style.cterm    : 'NONE')
 endfunction
 
-" call s:h('Normal',        {'fg': s:light_gray, 'bg': s:bg})
 call s:h('Normal',        {'fg': s:norm, 'bg': s:bg})
 
 " restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
@@ -94,10 +95,10 @@ endif
 
 call s:h('Cursor',        {'fg': s:norm, 'bg': s:purple})
 call s:h('Comment',       {'fg': s:bg_subtle, 'gui': s:italic, 'cterm': s:italic})
-call s:h('Constant',      {'fg': s:purple})
+call s:h('Constant',      {'fg': s:string})
 call s:h('Identifier',    {'fg': s:norm_subtle})
 call s:h('Statement',     {'fg': s:norm_subtle})
-call s:h('Operator',      {'fg': s:norm, 'cterm': s:bold, 'gui': s:bold})
+call s:h('Operator',      {'fg': s:norm_subtle, 'cterm': s:bold, 'gui': s:bold})
 call s:h('PreProc',       {'fg': s:norm_subtle})
 call s:h('Type',          {'fg': s:norm_subtle})
 call s:h('Special',       {'fg': s:norm_subtle})
