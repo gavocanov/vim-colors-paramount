@@ -57,8 +57,8 @@ else
     let s:bg              = {'gui': '#ebdbb2', 'cterm': '223'}
     let s:bg_subtle       = {'gui': '#dbae53', 'cterm': '248'}
     let s:bg_very_subtle  = {'gui': '#d5c4a1', 'cterm': '250'}
-    let s:norm            = {'gui': '#665c54', 'cterm': '241'}
-    let s:norm_subtle     = {'gui': '#928374', 'cterm': '245'}
+    let s:norm_subtle     = {'gui': '#665c54', 'cterm': '241'}
+    let s:norm            = {'gui': '#928374', 'cterm': '245'}
 
     let s:blue            = { 'gui': '#458588', 'cterm': '32'  }
     let s:purple          = { 'gui': '#b16286', 'cterm': '134' }
