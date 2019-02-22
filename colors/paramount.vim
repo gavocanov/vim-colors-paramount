@@ -27,12 +27,12 @@ endif
 
 if g:colors_paramount_biu
     let s:bold = 'bold'
-    let s:ital = 'italic'
-    let s:unde = 'underline'
+    let s:italic = 'italic'
+    let s:underline = 'underline'
 else
     let s:bold = 'NONE'
-    let s:ital = 'NONE'
-    let s:unde = 'NONE'
+    let s:italic = 'NONE'
+    let s:underline = 'NONE'
 endif
 
 let s:black           = { 'gui': '#121212', 'cterm': '233' }
@@ -45,13 +45,13 @@ let s:light_gray      = { 'gui': '#A0A0A0', 'cterm': '248' }
 let s:light_red       = { 'gui': '#E32791', 'cterm': '1'   }
 let s:dark_red        = { 'gui': '#cc241d', 'cterm': '1'   }
 
-let s:light_blue      = { 'gui': '#b6d6fd', 'cterm': '153' }
+let s:light_blue      = { 'gui': '#005F87', 'cterm': '153' }
 let s:dark_blue       = { 'gui': '#458588', 'cterm': '32'  }
 
 let s:light_cyan      = { 'gui': '#4FB8CC', 'cterm': '14'  }
 let s:dark_cyan       = { 'gui': '#689d5a', 'cterm': '6'   }
 
-let s:light_green     = { 'gui': '#5FD7A7', 'cterm': '10'  }
+let s:light_green     = { 'gui': '#10A778', 'cterm': '10'  }
 let s:dark_green      = { 'gui': '#98971a', 'cterm': '2'   }
 
 let s:light_purple    = { 'gui': '#a790d5', 'cterm': '140' }
@@ -115,18 +115,18 @@ if &background != s:background
 endif
 
 call s:h('Cursor',        {'fg': s:norm, 'bg': s:purple})
-call s:h('Comment',       {'fg': s:bg_subtle, 'gui':  s:ital, 'cterm': s:ital})
+call s:h('Comment',       {'fg': s:bg_subtle, 'gui': s:italic, 'cterm': s:italic})
 call s:h('Constant',      {'fg': s:purple})
-call s:h('Identifier',    {'fg': s:norm_subtle})
+call s:h('Identifier',    {'fg': s:norm_subtle, 'gui': s:bold, 'cterm': s:bold})
 call s:h('Statement',     {'fg': s:norm_subtle})
 call s:h('Operator',      {'fg': s:norm, 'cterm': s:bold, 'gui': s:bold})
 call s:h('PreProc',       {'fg': s:norm_subtle})
 call s:h('Type',          {'fg': s:norm_subtle})
 call s:h('Special',       {'fg': s:norm_subtle})
-call s:h('Underlined',    {'fg': s:norm, 'gui': s:unde, 'cterm': s:unde})
+call s:h('Underlined',    {'fg': s:norm, 'gui': s:underline, 'cterm': s:underline})
 call s:h('Ignore',        {'fg': s:bg_very_subtle})
 call s:h('Error',         {'fg': s:red, 'cterm': s:bold})
-call s:h('Todo',          {'fg': s:purple, 'gui': s:unde, 'cterm': s:unde})
+call s:h('Todo',          {'fg': s:purple, 'gui': s:underline, 'cterm': s:underline})
 call s:h('SpecialKey',    {'fg': s:green})
 call s:h('NonText',       {'fg': s:bg_subtle})
 call s:h('Directory',     {'fg': s:blue})
@@ -134,7 +134,7 @@ call s:h('ErrorMsg',      {'fg': s:red})
 call s:h('IncSearch',     {'fg': s:bg, 'bg': s:yellow})
 call s:h('Search',        {'fg': s:orange})
 call s:h('MoreMsg',       {'fg': s:bg_subtle, 'cterm': s:bold, 'gui': s:bold})
-call s:h('LineNr',        {'fg': s:bg_very_subtle})
+call s:h('LineNr',        {'fg': s:bg_subtle})
 call s:h('CursorLineNr',  {'fg': s:blue, 'bg': s:bg})
 call s:h('Question',      {'fg': s:red})
 call s:h('VertSplit',     {'fg': s:bg_very_subtle, 'bg': s:bg_very_subtle})
@@ -148,9 +148,9 @@ call s:h('DiffAdd',       {'fg': s:green})
 call s:h('DiffDelete',    {'fg': s:red})
 call s:h('DiffChange',    {'fg': s:yellow})
 call s:h('DiffText',      {'fg': s:blue})
-call s:h('Pmenu',         {'fg': s:norm, 'bg': s:bg_subtle})
-call s:h('PmenuSel',      {'fg': s:norm, 'bg': s:purple})
-call s:h('PmenuSbar',     {'fg': s:norm, 'bg': s:bg_subtle})
+call s:h('Pmenu',         {'fg': s:norm, 'bg': s:bg_very_subtle})
+call s:h('PmenuSel',      {'fg': s:bg,   'bg': s:norm, 'gui': s:bold, 'cterm': s:bold})
+call s:h('PmenuSbar',     {'fg': s:norm, 'bg': s:bg_very_subtle})
 call s:h('PmenuThumb',    {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('TabLine',       {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
 call s:h('TabLineSel',    {'fg': s:norm,      'bg': s:bg_very_subtle, 'gui': s:bold, 'cterm': s:bold})
@@ -174,15 +174,15 @@ call s:h('IStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:red})
 call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:norm_subtle})
 " gui
 if has('gui_running')
-    call s:h('SpellBad',    {'gui': s:unde, 'sp': s:red})
-    call s:h('SpellCap',    {'gui': s:unde, 'sp': s:green})
-    call s:h('SpellRare',   {'gui': s:unde, 'sp': s:pink})
-    call s:h('SpellLocal',  {'gui': s:unde, 'sp': s:green})
+    call s:h('SpellBad',    {'gui': s:underline, 'sp': s:red})
+    call s:h('SpellCap',    {'gui': s:underline, 'sp': s:green})
+    call s:h('SpellRare',   {'gui': s:underline, 'sp': s:pink})
+    call s:h('SpellLocal',  {'gui': s:underline, 'sp': s:green})
 else
-    call s:h('SpellBad',    {'cterm': s:unde, 'fg': s:red})
-    call s:h('SpellCap',    {'cterm': s:unde, 'fg': s:green})
-    call s:h('SpellRare',   {'cterm': s:unde, 'fg': s:pink})
-    call s:h('SpellLocal',  {'cterm': s:unde, 'fg': s:green})
+    call s:h('SpellBad',    {'cterm': s:underline, 'fg': s:red})
+    call s:h('SpellCap',    {'cterm': s:underline, 'fg': s:green})
+    call s:h('SpellRare',   {'cterm': s:underline, 'fg': s:pink})
+    call s:h('SpellLocal',  {'cterm': s:underline, 'fg': s:green})
 endif
 " links
 hi!  CursorLine           term=NONE        cterm=NONE guibg=NONE
@@ -215,9 +215,9 @@ hi!  link                 ModeMsg          MoreMsg
 " **********************************************************************************************************************
 " err/warnings
 " no background
-call s:h('ErrorNoBg',               {'gui': s:ital, 'cterm': s:ital})
-call s:h('WarnNoBg',                {'gui': s:ital, 'cterm': s:ital})
-call s:h('InfoNoBg',                {'gui': s:ital, 'cterm': s:ital})
+call s:h('ErrorNoBg',               {'gui': s:italic, 'cterm': s:italic})
+call s:h('WarnNoBg',                {'gui': s:italic, 'cterm': s:italic})
+call s:h('InfoNoBg',                {'gui': s:italic, 'cterm': s:italic})
 " with background
 call s:h('ErrorBg',                 {'bg': s:bg_very_subtle})
 call s:h('WarnBg',                  {'bg': s:bg_very_subtle})
