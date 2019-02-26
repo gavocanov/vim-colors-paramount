@@ -53,7 +53,7 @@ if &background ==? 'dark'
     let s:orange          = { 'gui': '#D75F5F', 'cterm': '167' }
 
     let s:string          = s:purple
-    let s:visual          = s:purple
+    let s:visual          = s:norm_subtle
 else
     let s:bg              = {'gui': '#d5c4a1', 'cterm': '250'}
     let s:bg_subtle       = {'gui': '#928374', 'cterm': '244'}
