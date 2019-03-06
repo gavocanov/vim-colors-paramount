@@ -137,6 +137,7 @@ call s:h('TabLineFill',   {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
 call s:h('qfLineNr',      {'fg': s:bg_very_subtle})
 call s:h('VisualNOS',     {'bg': s:bg_subtle})
 call s:h('CursorColumn',  {'bg': s:bg_very_subtle})
+call s:h('CursorLine',    {'bg': s:bg_very_subtle})
 call s:h('ColorColumn',   {'bg': s:bg_very_subtle})
 call s:h('MatchParen',    {'bg': s:bg_subtle, 'fg': s:norm})
 call s:h('SignColumn',    {'bg': s:bg})
@@ -164,7 +165,7 @@ else
     call s:h('SpellLocal',  {'cterm': s:underline, 'fg': s:green})
 endif
 " links
-hi!  CursorLine           term=NONE        cterm=NONE guibg=NONE
+" hi!  CursorLine           term=NONE        cterm=NONE guibg=NONE
 hi!  link                 Character        Constant
 hi!  link                 Number           Constant
 hi!  link                 Boolean          Constant
@@ -198,9 +199,9 @@ call s:h('ErrorNoBg',               {'gui': s:italic, 'cterm': s:italic})
 call s:h('WarnNoBg',                {'gui': s:italic, 'cterm': s:italic})
 call s:h('InfoNoBg',                {'gui': s:italic, 'cterm': s:italic})
 " with background
-call s:h('ErrorBg',                 {'bg': s:bg_very_subtle})
-call s:h('WarnBg',                  {'bg': s:bg_very_subtle})
-call s:h('InfoBg',                  {'bg': s:bg_very_subtle})
+call s:h('ErrorBg',                 {'bg': s:bg})
+call s:h('WarnBg',                  {'bg': s:bg})
+call s:h('InfoBg',                  {'bg': s:bg})
 call s:h('HintBg',                  {'bg': s:bg})
 " signs
 call s:h('ErrorSign',               {'fg': s:orange,    'bg': s:bg})
