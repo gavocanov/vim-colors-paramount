@@ -233,6 +233,16 @@ hi link CocHintLine 			   HintBg
 
 call s:h('CodeLens',               {'fg': s:bg_subtle})
 hi link CocCodeLens 			   CodeLens
+
+call s:h('CocFloat',               {'bg': s:bg_subtle})
+hi link CocInfoFloat               CocFloat
+hi link CocHintFloat               CocFloat
+hi link CocErrorFloat              CocFloat
+hi link CocWarningFloat            CocFloat
+
+hi link CocPumFloating             Pmenu
+hi link CocPumFloatingDetail       Pmenu
+
 " BufTabLine
 hi link BufTabLineActive           TabLineSel
 " ALE
