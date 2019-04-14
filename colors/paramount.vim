@@ -21,17 +21,24 @@ endif
 let g:colors_name='paramount'
 
 " global settings
-if !exists('g:colors_paramount_biu')
-    let g:colors_paramount_biu = 0
+if !exists('g:colors_paramount_bi')
+    let g:colors_paramount_bi = 0
+endif
+if !exists('g:colors_paramount_u')
+    let g:colors_paramount_u = 0
 endif
 
-if g:colors_paramount_biu
+if g:colors_paramount_bi
     let s:bold = 'bold'
     let s:italic = 'italic'
-    let s:underline = 'underline'
 else
     let s:bold = 'NONE'
     let s:italic = 'NONE'
+endif
+
+if g:colors_paramount_u
+    let s:underline = 'underline'
+else
     let s:underline = 'NONE'
 endif
 
@@ -55,7 +62,7 @@ if &background ==? 'dark'
     let s:string          = s:purple
     let s:visual          = s:norm_subtle
 else
-    let s:bg              = {'gui': '#d5c4a1', 'cterm': '250'}
+    let s:bg              = {'gui': '#fbf1c7', 'cterm': '250'}
     let s:bg_subtle       = {'gui': '#928374', 'cterm': '244'}
     let s:bg_very_subtle  = {'gui': '#bdae93', 'cterm': '248'}
     let s:norm            = {'gui': '#504945', 'cterm': '239'}
@@ -86,7 +93,8 @@ function! s:h(group, style)
                 \ 'cterm='   (has_key(a:style, 'cterm') ? a:style.cterm    : 'NONE')
 endfunction
 
-call s:h('Normal',        {'fg': s:norm, 'bg': s:bg})
+" call s:h('Normal',        {'fg': s:norm, 'bg': s:bg})
+call s:h('Normal',        {'fg': s:norm})
 
 " restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
 if &background != s:background
@@ -191,7 +199,7 @@ hi!  link                 SpecialComment   Special
 hi!  link                 Debug            Special
 hi!  link                 ModeMsg          MoreMsg
 " **********************************************************************************************************************
-" My custom stuff
+" custom stuff
 " **********************************************************************************************************************
 " err/warnings
 " no background
@@ -275,7 +283,6 @@ hi link SignifySignChange         Sign
 hi link SignifySignDelete         Sign
 hi link SignifySignChangeDelete   Sign
 " Match parens
-" hi link  MatchParen               Search
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
