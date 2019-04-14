@@ -43,7 +43,7 @@ if &background ==? 'dark'
     let s:norm            = { 'gui': '#A0A0A0', 'cterm': '248' }
     let s:norm_subtle     = { 'gui': '#767676', 'cterm': '243' }
 
-    let s:blue            = { 'gui': '#005F87', 'cterm': '153' }
+    let s:blue            = { 'gui': '#005F87', 'cterm': '32' }
     let s:purple          = { 'gui': '#a790d5', 'cterm': '140' }
     let s:cyan            = { 'gui': '#4FB8CC', 'cterm': '14'  }
     let s:green           = { 'gui': '#10A778', 'cterm': '10'  }
@@ -114,7 +114,7 @@ call s:h('IncSearch',     {'fg': s:bg, 'bg': s:yellow})
 call s:h('Search',        {'fg': s:orange})
 call s:h('MoreMsg',       {'fg': s:bg_subtle, 'cterm': s:bold, 'gui': s:bold})
 call s:h('LineNr',        {'fg': s:bg_subtle})
-call s:h('CursorLineNr',  {'fg': s:blue, 'bg': s:bg})
+call s:h('CursorLineNr',  {'fg': s:blue, 'bg': s:bg_very_subtle})
 call s:h('Question',      {'fg': s:red})
 call s:h('VertSplit',     {'fg': s:bg_very_subtle, 'bg': s:bg_very_subtle})
 call s:h('Title',         {'fg': s:blue})
