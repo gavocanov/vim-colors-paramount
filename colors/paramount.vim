@@ -93,8 +93,11 @@ function! s:h(group, style)
                 \ 'cterm='   (has_key(a:style, 'cterm') ? a:style.cterm    : 'NONE')
 endfunction
 
-" call s:h('Normal',        {'fg': s:norm, 'bg': s:bg})
-call s:h('Normal',        {'fg': s:norm})
+if has('gui_running')
+    call s:h('Normal', {'fg': s:norm, 'bg': s:bg})
+else
+    call s:h('Normal', {'fg': s:norm})
+endif
 
 " restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
 if &background != s:background
