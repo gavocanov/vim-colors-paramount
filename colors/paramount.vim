@@ -176,31 +176,30 @@ else
     call s:h('SpellLocal',  {'cterm': s:underline, 'fg': s:green})
 endif
 " links
-" hi!  CursorLine           term=NONE        cterm=NONE guibg=NONE
-hi!  link                 Character        Constant
-hi!  link                 Number           Constant
-hi!  link                 Boolean          Constant
-hi!  link                 Float            Constant
-hi!  link                 String           Constant
-hi!  link                 Function         Normal
-hi!  link                 Conditonal       Statement
-hi!  link                 Repeat           Statement
-hi!  link                 Label            Statement
-hi!  link                 Keyword          Statement
-hi!  link                 Exception        Statement
-hi!  link                 Include          PreProc
-hi!  link                 Define           PreProc
-hi!  link                 Macro            PreProc
-hi!  link                 PreCondit        PreProc
-hi!  link                 StorageClass     Type
-hi!  link                 Structure        Type
-hi!  link                 Typedef          Type
-hi!  link                 SpecialChar      Special
-hi!  link                 Tag              Special
-hi!  link                 Delimiter        Special
-hi!  link                 SpecialComment   Special
-hi!  link                 Debug            Special
-hi!  link                 ModeMsg          MoreMsg
+hi! link Character       Constant
+hi! link Number          Constant
+hi! link Boolean         Constant
+hi! link Float           Constant
+hi! link String          Constant
+hi! link Function        Normal
+hi! link Conditonal      Statement
+hi! link Repeat          Statement
+hi! link Label           Statement
+hi! link Keyword         Statement
+hi! link Exception       Statement
+hi! link Include         PreProc
+hi! link Define          PreProc
+hi! link Macro           PreProc
+hi! link PreCondit       PreProc
+hi! link StorageClass    Type
+hi! link Structure       Type
+hi! link Typedef         Type
+hi! link SpecialChar     Special
+hi! link Tag             Special
+hi! link Delimiter       Special
+hi! link SpecialComment  Special
+hi! link Debug           Special
+hi! link ModeMsg         MoreMsg
 " **********************************************************************************************************************
 " custom stuff
 " **********************************************************************************************************************
@@ -285,7 +284,6 @@ hi link SignifySignAdd            Sign
 hi link SignifySignChange         Sign
 hi link SignifySignDelete         Sign
 hi link SignifySignChangeDelete   Sign
-" Match parens
 " **********************************************************************************************************************
 " language specifics
 " **********************************************************************************************************************
@@ -314,7 +312,6 @@ hi link typescriptIdentifier       Statement
 hi link ktAnnotation                SpecialKey
 hi link ktModifier                  Keyword
 hi link ktStructure                 Keyword
-" hi link ktType                      Keyword
 hi link ktOperator                  Keyword
 hi link ktSimpleInterpolation       Keyword
 hi link ktComplexInterpolation      Keyword
@@ -355,16 +352,16 @@ hi link purescriptOperatorType     Delimiter
 hi link purescriptOperatorTypeSig  Delimiter
 hi link purescriptIdentifier       Identifier
 " Clojure
-hi link clojureBoolean   Title
-hi link clojureCond      Keyword
-hi link clojureConstant  Statement
-hi link clojureDefine    Statement
-hi link clojureException Statement
-hi link clojureFunc      Statement
-hi link clojureMacro     Statement
-hi link clojureRepeat    Statement
-hi link clojureSpecial   SpecialKey
-hi link clojureVariable  Title
+hi link clojureBoolean             Title
+hi link clojureCond                Keyword
+hi link clojureConstant            Statement
+hi link clojureDefine              Statement
+hi link clojureException           Statement
+hi link clojureFunc                Statement
+hi link clojureMacro               Statement
+hi link clojureRepeat              Statement
+hi link clojureSpecial             SpecialKey
+hi link clojureVariable            Title
 " Scala
 hi link scalaKeywordModifier        Keyword
 hi link scalaSpecialFunction        Keyword
