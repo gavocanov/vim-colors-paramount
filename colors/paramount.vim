@@ -44,9 +44,9 @@ endif
 
 let s:background = &background
 if &background ==? 'dark'
-    let s:bg              = { 'gui': '#121212', 'cterm': '233' }
+    let s:_bg             = { 'gui': '#161616', 'cterm': '233' }
     let s:bg_subtle       = { 'gui': '#4E4E4E', 'cterm': '239' }
-    let s:bg_very_subtle  = { 'gui': '#181818', 'cterm': '234' }
+    let s:bg_very_subtle  = { 'gui': '#262626', 'cterm': '235' }
     let s:norm            = { 'gui': '#A0A0A0', 'cterm': '248' }
     let s:norm_subtle     = { 'gui': '#767676', 'cterm': '243' }
 
@@ -62,7 +62,7 @@ if &background ==? 'dark'
     let s:string          = s:purple
     let s:visual          = s:norm_subtle
 else
-    let s:bg              = {'gui': '#fbf1c7', 'cterm': '250'}
+    let s:_bg             = {'gui': '#fbf1c7', 'cterm': '250'}
     let s:bg_subtle       = {'gui': '#928374', 'cterm': '244'}
     let s:bg_very_subtle  = {'gui': '#bdae93', 'cterm': '248'}
     let s:norm            = {'gui': '#504945', 'cterm': '239'}
@@ -94,7 +94,7 @@ function! s:h(group, style)
 endfunction
 
 if has('gui_running')
-    call s:h('Normal', {'fg': s:norm, 'bg': s:bg})
+    call s:h('Normal', {'fg': s:norm, 'bg': s:_bg})
 else
     call s:h('Normal', {'fg': s:norm})
 endif
@@ -121,17 +121,17 @@ call s:h('SpecialKey',    {'fg': s:green})
 call s:h('NonText',       {'fg': s:bg_subtle})
 call s:h('Directory',     {'fg': s:blue})
 call s:h('ErrorMsg',      {'fg': s:red})
-call s:h('IncSearch',     {'fg': s:bg, 'bg': s:yellow})
+call s:h('IncSearch',     {'fg': s:_bg, 'bg': s:yellow})
 call s:h('Search',        {'fg': s:orange})
 call s:h('MoreMsg',       {'fg': s:bg_subtle, 'cterm': s:bold, 'gui': s:bold})
 call s:h('LineNr',        {'fg': s:bg_subtle})
-call s:h('CursorLineNr',  {'fg': s:blue, 'bg': s:bg_very_subtle})
+call s:h('CursorLineNr',  {'fg': s:blue, 'cterm': s:bold, 'gui': s:bold})
 call s:h('Question',      {'fg': s:red})
 call s:h('VertSplit',     {'fg': s:bg_very_subtle, 'bg': s:bg_very_subtle})
 call s:h('Title',         {'fg': s:blue})
-call s:h('Visual',        {'fg': s:bg, 'bg': s:visual})
+call s:h('Visual',        {'fg': s:_bg, 'bg': s:visual})
 call s:h('WarningMsg',    {'fg': s:red})
-call s:h('WildMenu',      {'fg': s:bg, 'bg': s:norm})
+call s:h('WildMenu',      {'fg': s:_bg, 'bg': s:norm})
 call s:h('Folded',        {'fg': s:norm_subtle, 'bg': s:bg_very_subtle, 'gui': s:italic})
 call s:h('FoldColumn',    {'fg': s:norm_subtle, 'bg': s:bg_very_subtle})
 call s:h('DiffAdd',       {'fg': s:yellow})
@@ -139,7 +139,7 @@ call s:h('DiffDelete',    {'fg': s:red})
 call s:h('DiffChange',    {'fg': s:green})
 call s:h('DiffText',      {'fg': s:blue})
 call s:h('Pmenu',         {'fg': s:norm, 'bg': s:bg_subtle})
-call s:h('PmenuSel',      {'fg': s:bg,   'bg': s:norm, 'gui': s:bold, 'cterm': s:bold})
+call s:h('PmenuSel',      {'fg': s:_bg,  'bg': s:norm, 'gui': s:bold, 'cterm': s:bold})
 call s:h('PmenuSbar',     {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('PmenuThumb',    {'fg': s:norm, 'bg': s:bg_subtle})
 call s:h('TabLine',       {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
@@ -148,16 +148,16 @@ call s:h('TabLineFill',   {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
 call s:h('qfLineNr',      {'fg': s:bg_very_subtle})
 call s:h('VisualNOS',     {'bg': s:bg_subtle})
 call s:h('CursorColumn',  {'bg': s:bg_very_subtle})
-call s:h('CursorLine',    {'bg': s:bg_very_subtle})
+call s:h('CursorLine',    {})
 call s:h('ColorColumn',   {'bg': s:bg_very_subtle})
 call s:h('MatchParen',    {'bg': s:bg_subtle, 'fg': s:norm})
-call s:h('SignColumn',    {'bg': s:bg})
-call s:h('htmlH1',        {'bg': s:bg, 'fg': s:norm})
-call s:h('htmlH2',        {'bg': s:bg, 'fg': s:norm})
-call s:h('htmlH3',        {'bg': s:bg, 'fg': s:norm})
-call s:h('htmlH4',        {'bg': s:bg, 'fg': s:norm})
-call s:h('htmlH5',        {'bg': s:bg, 'fg': s:norm})
-call s:h('htmlH6',        {'bg': s:bg, 'fg': s:norm})
+call s:h('SignColumn',    {})
+call s:h('htmlH1',        {'fg': s:norm})
+call s:h('htmlH2',        {'fg': s:norm})
+call s:h('htmlH3',        {'fg': s:norm})
+call s:h('htmlH4',        {'fg': s:norm})
+call s:h('htmlH5',        {'fg': s:norm})
+call s:h('htmlH6',        {'fg': s:norm})
 " status line
 call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:norm_subtle})
 call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
@@ -209,16 +209,16 @@ call s:h('ErrorNoBg',               {'gui': s:italic, 'cterm': s:italic})
 call s:h('WarnNoBg',                {'gui': s:italic, 'cterm': s:italic})
 call s:h('InfoNoBg',                {'gui': s:italic, 'cterm': s:italic})
 " with background
-call s:h('ErrorBg',                 {'bg': s:bg})
-call s:h('WarnBg',                  {'bg': s:bg})
-call s:h('InfoBg',                  {'bg': s:bg})
-call s:h('HintBg',                  {'bg': s:bg})
+call s:h('ErrorBg',                 {})
+call s:h('WarnBg',                  {})
+call s:h('InfoBg',                  {})
+call s:h('HintBg',                  {})
 " signs
-call s:h('ErrorSign',               {'fg': s:orange,    'bg': s:bg})
-call s:h('WarnSign',                {'fg': s:yellow,    'bg': s:bg})
-call s:h('InfoSign',                {'fg': s:bg_subtle, 'bg': s:bg})
-call s:h('HintSign',                {'fg': s:bg_subtle, 'bg': s:bg})
-call s:h('Sign',                    {'fg': s:green,     'bg': s:bg})
+call s:h('ErrorSign',               {'fg': s:orange})
+call s:h('WarnSign',                {'fg': s:yellow})
+call s:h('InfoSign',                {'fg': s:bg_subtle})
+call s:h('HintSign',                {'fg': s:bg_subtle})
+call s:h('Sign',                    {'fg': s:green})
 " CoC
 hi link CocErrorSign 			   ErrorSign
 hi link CocWarningSign 			   WarnSign
@@ -276,9 +276,9 @@ hi link SyntasticErrorSign        ErrorSign
 hi link SyntasticError            ErrorBg
 " GitGutter
 hi link GitGutterAdd              Sign
-hi link GitGutterChange           Sign
-hi link GitGutterDelete           Sign
-hi link GitGutterChangeDelete     Sign
+hi link GitGutterChange           WarnSign
+hi link GitGutterDelete           ErrorSign
+hi link GitGutterChangeDelete     ErrorSign
 " Signify
 hi link SignifySignAdd            Sign
 hi link SignifySignChange         Sign
