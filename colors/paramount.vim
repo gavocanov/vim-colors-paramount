@@ -176,6 +176,10 @@ else
     call s:h('SpellLocal',  {'cterm': s:underline, 'fg': s:green})
 endif
 " links
+hi! link diffAdded       DiffAdd
+hi! link diffRemoved     DiffDelete
+hi! link diffLine        String
+hi! link diffSubname     Normal
 hi! link Character       Constant
 hi! link Number          Constant
 hi! link Boolean         Constant
