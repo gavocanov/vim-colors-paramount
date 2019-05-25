@@ -42,44 +42,20 @@ else
     let s:underline = 'NONE'
 endif
 
-let s:background = &background
-if &background ==? 'dark'
-    let s:_bg             = { 'gui': '#161616', 'cterm': '233' }
-    let s:bg_subtle       = { 'gui': '#4E4E4E', 'cterm': '239' }
-    let s:bg_very_subtle  = { 'gui': '#262626', 'cterm': '235' }
-    let s:norm            = { 'gui': '#A0A0A0', 'cterm': '248' }
-    let s:norm_subtle     = { 'gui': '#767676', 'cterm': '243' }
+let s:bg              = { 'gui': 'NONE', 'cterm': '00' }
+let s:bg_subtle       = { 'gui': 'NONE', 'cterm': '08' }
+let s:norm            = { 'gui': 'NONE', 'cterm': '07' }
+let s:norm_subtle     = { 'gui': 'NONE', 'cterm': '15' }
 
-    let s:blue            = { 'gui': '#005F87', 'cterm': '32' }
-    let s:purple          = { 'gui': '#a790d5', 'cterm': '140' }
-    let s:cyan            = { 'gui': '#4FB8CC', 'cterm': '14'  }
-    let s:green           = { 'gui': '#10A778', 'cterm': '10'  }
-    let s:red             = { 'gui': '#E32791', 'cterm': '1'   }
-    let s:yellow          = { 'gui': '#ffff87', 'cterm': '228' }
-    let s:pink            = { 'gui': '#fb007a', 'cterm': '9'   }
-    let s:orange          = { 'gui': '#D75F5F', 'cterm': '167' }
+let s:red             = { 'gui': 'NONE', 'cterm': '01' }
+let s:green           = { 'gui': 'NONE', 'cterm': '02' }
+let s:yellow          = { 'gui': 'NONE', 'cterm': '03' }
+let s:blue            = { 'gui': 'NONE', 'cterm': '04' }
+let s:magenta         = { 'gui': 'NONE', 'cterm': '05' }
+let s:cyan            = { 'gui': 'NONE', 'cterm': '06' }
 
-    let s:string          = s:purple
-    let s:visual          = s:norm_subtle
-else
-    let s:_bg             = {'gui': '#fbf1c7', 'cterm': '250'}
-    let s:bg_subtle       = {'gui': '#928374', 'cterm': '244'}
-    let s:bg_very_subtle  = {'gui': '#bdae93', 'cterm': '248'}
-    let s:norm            = {'gui': '#504945', 'cterm': '239'}
-    let s:norm_subtle     = {'gui': '#7c6f64', 'cterm': '243'}
-
-    let s:blue            = { 'gui': '#458588', 'cterm': '32'  }
-    let s:purple          = { 'gui': '#b16286', 'cterm': '134' }
-    let s:cyan            = { 'gui': '#689d5a', 'cterm': '6'   }
-    let s:green           = { 'gui': '#98971a', 'cterm': '2'   }
-    let s:red             = { 'gui': '#cc241d', 'cterm': '1'   }
-    let s:yellow          = { 'gui': '#d79921', 'cterm': '3'   }
-    let s:pink            = { 'gui': '#b16286', 'cterm': '5'   }
-    let s:orange          = { 'gui': '#d65d0e', 'cterm': '166' }
-
-    let s:string          = s:green
-    let s:visual          = s:norm_subtle
-endif
+let s:string          = s:magenta
+let s:visual          = s:norm_subtle
 
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
@@ -94,61 +70,56 @@ function! s:h(group, style)
 endfunction
 
 if has('gui_running')
-    call s:h('Normal', {'fg': s:norm, 'bg': s:_bg})
+    call s:h('Normal', {'fg': s:norm, 'bg': s:bg})
 else
     call s:h('Normal', {'fg': s:norm})
 endif
 
-" restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
-if &background != s:background
-    execute 'set background=' . s:background
-endif
-
-call s:h('Cursor',        {'fg': s:norm, 'bg': s:purple})
+call s:h('Cursor',        {'fg': s:norm, 'bg': s:magenta})
 call s:h('Comment',       {'fg': s:bg_subtle, 'gui': s:italic, 'cterm': s:italic})
 call s:h('Constant',      {'fg': s:string})
 call s:h('Identifier',    {'fg': s:norm_subtle})
-call s:h('Statement',     {'fg': s:norm_subtle})
+call s:h('Statement',     {'fg': s:norm_subtle, 'cterm': s:bold, 'gui': s:bold})
 call s:h('Operator',      {'fg': s:norm_subtle, 'cterm': s:bold, 'gui': s:bold})
 call s:h('PreProc',       {'fg': s:norm_subtle})
 call s:h('Type',          {'fg': s:norm_subtle})
 call s:h('Special',       {'fg': s:norm_subtle})
 call s:h('Underlined',    {'fg': s:norm, 'gui': s:underline, 'cterm': s:underline})
-call s:h('Ignore',        {'fg': s:bg_very_subtle})
+call s:h('Ignore',        {'fg': s:bg_subtle})
 call s:h('Error',         {'fg': s:red, 'cterm': s:bold})
-call s:h('Todo',          {'fg': s:purple, 'gui': s:underline, 'cterm': s:underline})
+call s:h('Todo',          {'fg': s:magenta, 'gui': s:underline, 'cterm': s:underline})
 call s:h('SpecialKey',    {'fg': s:green})
 call s:h('NonText',       {'fg': s:bg_subtle})
 call s:h('Directory',     {'fg': s:blue})
 call s:h('ErrorMsg',      {'fg': s:red})
-call s:h('IncSearch',     {'fg': s:_bg, 'bg': s:yellow})
-call s:h('Search',        {'fg': s:orange})
+call s:h('IncSearch',     {'fg': s:bg, 'bg': s:yellow})
+call s:h('Search',        {'fg': s:yellow})
 call s:h('MoreMsg',       {'fg': s:bg_subtle, 'cterm': s:bold, 'gui': s:bold})
 call s:h('LineNr',        {'fg': s:bg_subtle})
-call s:h('CursorLineNr',  {'fg': s:blue, 'bg': s:bg_very_subtle, 'cterm': s:bold, 'gui': s:bold})
-call s:h('CursorColumn',  {'bg': s:bg_very_subtle})
-call s:h('CursorLine',    {'bg': s:bg_very_subtle})
-call s:h('ColorColumn',   {'bg': s:bg_very_subtle})
+call s:h('CursorLineNr',  {'fg': s:blue, 'cterm': s:bold, 'gui': s:bold})
+call s:h('CursorColumn',  {'bg': s:bg_subtle})
+call s:h('CursorLine',    {})
+call s:h('ColorColumn',   {'bg': s:bg_subtle})
 call s:h('Question',      {'fg': s:red})
-call s:h('VertSplit',     {'fg': s:bg_very_subtle, 'bg': s:bg_very_subtle})
+call s:h('VertSplit',     {'fg': s:bg_subtle, 'bg': s:bg})
 call s:h('Title',         {'fg': s:blue})
-call s:h('Visual',        {'fg': s:_bg, 'bg': s:visual})
+call s:h('Visual',        {'fg': s:bg, 'bg': s:visual})
 call s:h('WarningMsg',    {'fg': s:red})
-call s:h('WildMenu',      {'fg': s:_bg, 'bg': s:norm})
-call s:h('Folded',        {'fg': s:norm_subtle, 'bg': s:bg_very_subtle, 'gui': s:italic})
-call s:h('FoldColumn',    {'fg': s:norm_subtle, 'bg': s:bg_very_subtle})
+call s:h('WildMenu',      {'fg': s:bg, 'bg': s:norm})
+call s:h('Folded',        {'fg': s:norm_subtle, 'bg': s:bg_subtle, 'gui': s:italic})
+call s:h('FoldColumn',    {'fg': s:norm_subtle, 'bg': s:bg_subtle})
 call s:h('DiffAdd',       {'fg': s:yellow})
 call s:h('DiffDelete',    {'fg': s:red})
 call s:h('DiffChange',    {'fg': s:green})
 call s:h('DiffText',      {'fg': s:blue})
-call s:h('Pmenu',         {'fg': s:norm,    'bg': s:bg_very_subtle})
-call s:h('PmenuSel',      {'fg': s:_bg,     'bg': s:purple, 'gui': s:bold, 'cterm': s:bold})
-call s:h('PmenuSbar',     {'fg': s:norm,    'bg': s:bg_very_subtle})
-call s:h('PmenuThumb',    {'fg': s:norm,    'bg': s:bg_very_subtle})
-call s:h('TabLine',       {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
-call s:h('TabLineSel',    {'fg': s:norm,      'bg': s:bg_very_subtle, 'gui': s:bold, 'cterm': s:bold})
-call s:h('TabLineFill',   {'fg': s:bg_subtle, 'bg': s:bg_very_subtle})
-call s:h('qfLineNr',      {'fg': s:bg_very_subtle})
+call s:h('Pmenu',         {'fg': s:norm,    'bg': s:bg_subtle})
+call s:h('PmenuSel',      {'fg': s:bg,      'bg': s:magenta, 'gui': s:bold, 'cterm': s:bold})
+call s:h('PmenuSbar',     {'fg': s:norm,    'bg': s:bg_subtle})
+call s:h('PmenuThumb',    {'fg': s:norm,    'bg': s:bg_subtle})
+call s:h('TabLine',       {'fg': s:bg_subtle, 'bg': s:bg_subtle})
+call s:h('TabLineSel',    {'fg': s:norm,      'bg': s:bg_subtle, 'gui': s:bold, 'cterm': s:bold})
+call s:h('TabLineFill',   {'fg': s:bg_subtle, 'bg': s:bg_subtle})
+call s:h('qfLineNr',      {'fg': s:bg_subtle})
 call s:h('VisualNOS',     {'bg': s:bg_subtle})
 call s:h('MatchParen',    {'bg': s:bg_subtle, 'fg': s:norm})
 call s:h('SignColumn',    {})
@@ -159,20 +130,18 @@ call s:h('htmlH4',        {'fg': s:norm})
 call s:h('htmlH5',        {'fg': s:norm})
 call s:h('htmlH6',        {'fg': s:norm})
 " status line
-call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:norm_subtle})
-call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
-call s:h('IStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:red})
-call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:norm_subtle})
+call s:h('StatusLine',    {'bg': s:bg_subtle, 'fg': s:norm})
+call s:h('StatusLineNC',  {'bg': s:bg_subtle, 'fg': s:bg})
 " gui
 if has('gui_running')
     call s:h('SpellBad',    {'gui': s:underline, 'sp': s:red})
     call s:h('SpellCap',    {'gui': s:underline, 'sp': s:green})
-    call s:h('SpellRare',   {'gui': s:underline, 'sp': s:pink})
+    call s:h('SpellRare',   {'gui': s:underline, 'sp': s:magenta})
     call s:h('SpellLocal',  {'gui': s:underline, 'sp': s:green})
 else
     call s:h('SpellBad',    {'cterm': s:underline, 'fg': s:red})
     call s:h('SpellCap',    {'cterm': s:underline, 'fg': s:green})
-    call s:h('SpellRare',   {'cterm': s:underline, 'fg': s:pink})
+    call s:h('SpellRare',   {'cterm': s:underline, 'fg': s:magenta})
     call s:h('SpellLocal',  {'cterm': s:underline, 'fg': s:green})
 endif
 " links
@@ -218,7 +187,7 @@ call s:h('WarnBg',                  {})
 call s:h('InfoBg',                  {})
 call s:h('HintBg',                  {})
 " signs
-call s:h('ErrorSign',               {'fg': s:orange})
+call s:h('ErrorSign',               {'fg': s:yellow})
 call s:h('WarnSign',                {'fg': s:yellow})
 call s:h('InfoSign',                {'fg': s:bg_subtle})
 call s:h('HintSign',                {'fg': s:bg_subtle})
