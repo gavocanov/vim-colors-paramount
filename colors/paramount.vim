@@ -243,18 +243,30 @@ hi link ALEVirtualTextInfo         WarnBg
 hi link ALEVirtualTextStyleError   WarnBg
 hi link ALEVirtualTextStyleWarning WarnBg
 " Syntastic
-hi link SyntasticWarningSign      WarnSign
-hi link SyntasticWarning          WarnNoBg
-hi link SyntasticErrorSign        ErrorSign
-hi link SyntasticError            ErrorBg
+hi link SyntasticWarningSign       WarnSign
+hi link SyntasticWarning           WarnNoBg
+hi link SyntasticErrorSign         ErrorSign
+hi link SyntasticError             ErrorBg
 " GitGutter
-hi link GitGutterAdd              Sign
-hi link GitGutterChange           WarnSign
-hi link GitGutterDelete           ErrorSign
-hi link GitGutterChangeDelete     ErrorSign
+hi link GitGutterAdd               Sign
+hi link GitGutterChange            WarnSign
+hi link GitGutterDelete            ErrorSign
+hi link GitGutterChangeDelete      ErrorSign
 " Signify
-hi link SignifySignAdd            Sign
-hi link SignifySignChange         Sign
-hi link SignifySignDelete         Sign
-hi link SignifySignChangeDelete   Sign
+hi link SignifySignAdd             Sign
+hi link SignifySignChange          Sign
+hi link SignifySignDelete          Sign
+hi link SignifySignChangeDelete    Sign
+" **********************************************************************************************************************
+" language specifics
+" **********************************************************************************************************************
+"  Xml
+hi link xmlAttrib                  Statement
+hi link xmlTag                     Delimiter
+hi link xmlTagName                 Statement
+hi link xmlEndTag                  Statement
+hi link Operator                   Delimiter
+" kotlin/java
+hi link ktAnnotation               SpecialKey
+hi link javaAnnotation             SpecialKey
 " **********************************************************************************************************************
