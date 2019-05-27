@@ -187,7 +187,7 @@ call s:h('WarnBg',                  {})
 call s:h('InfoBg',                  {})
 call s:h('HintBg',                  {})
 " signs
-call s:h('ErrorSign',               {'fg': s:yellow})
+call s:h('ErrorSign',               {'fg': s:red})
 call s:h('WarnSign',                {'fg': s:yellow})
 call s:h('InfoSign',                {'fg': s:bg_subtle})
 call s:h('HintSign',                {'fg': s:bg_subtle})
