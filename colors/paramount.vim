@@ -4,9 +4,7 @@
 " License:    The MIT License (MIT)
 "
 " A minimal colorscheme for Vim that only puts emphasis on the paramount with some lang specifics.
-"
 " Based on the paramount, pencil and off colorschemes:
-"
 " https://github.com/owickstrom/vim-colors-paramount
 " https://github.com/reedes/vim-colors-pencil
 " https://github.com/reedes/vim-colors-off
@@ -79,10 +77,10 @@ call s:h('Cursor',        {'fg': s:norm, 'bg': s:magenta})
 call s:h('Comment',       {'fg': s:bg_subtle, 'gui': s:italic, 'cterm': s:italic})
 call s:h('Constant',      {'fg': s:string})
 call s:h('Identifier',    {'fg': s:norm_subtle})
-call s:h('Statement',     {'fg': s:norm_subtle, 'cterm': s:bold, 'gui': s:bold})
-call s:h('Operator',      {'fg': s:norm_subtle, 'cterm': s:bold, 'gui': s:bold})
+call s:h('Statement',     {'fg': s:norm_subtle})
+call s:h('Operator',      {'fg': s:norm_subtle})
 call s:h('PreProc',       {'fg': s:norm_subtle})
-call s:h('Type',          {'fg': s:norm_subtle, 'cterm': s:bold, 'gui': s:bold})
+call s:h('Type',          {'fg': s:norm_subtle})
 call s:h('Special',       {'fg': s:norm_subtle})
 call s:h('Underlined',    {'fg': s:norm, 'gui': s:underline, 'cterm': s:underline})
 call s:h('Ignore',        {'fg': s:bg_subtle})
@@ -130,8 +128,10 @@ call s:h('htmlH4',        {'fg': s:norm})
 call s:h('htmlH5',        {'fg': s:norm})
 call s:h('htmlH6',        {'fg': s:norm})
 " status line
-call s:h('StatusLine',    {'bg': s:bg_subtle, 'fg': s:norm})
-call s:h('StatusLineNC',  {'bg': s:bg_subtle, 'fg': s:bg})
+" call s:h('StatusLine',    {'bg': s:bg_subtle, 'fg': s:norm})
+" call s:h('StatusLineNC',  {'bg': s:bg_subtle, 'fg': s:bg})
+call s:h('StatusLine',    {'fg': s:norm_subtle})
+call s:h('StatusLineNC',  {'fg': s:bg_subtle})
 " gui
 if has('gui_running')
     call s:h('SpellBad',    {'gui': s:underline, 'sp': s:red})
@@ -197,35 +197,27 @@ hi link CocErrorSign 			   ErrorSign
 hi link CocWarningSign 			   WarnSign
 hi link CocInfoSign 			   InfoSign
 hi link CocHintSign 			   HintSign
-
 hi link CocErrorHighlight 		   ErrorBg
 hi link CocWarningHighlight        WarnBg
 hi link CocInfoHighlight 		   InfoBg
 hi link CocHintHighlight 		   HintBg
-
 hi link CocHighlightText 		   IncSearch
 hi link CocHighlightTextRead 	   IncSearch
 hi link CocHighlightTextWrite      IncSearch
-
 hi link HighlightedyankRegion      IncSearch
-
 hi link CocErrorLine 			   ErrorBg
 hi link CocWarningLine 			   WarnBg
 hi link CocInfoLine 			   InfoBg
 hi link CocHintLine 			   HintBg
-
 call s:h('CodeLens',               {'fg': s:bg_subtle})
 hi link CocCodeLens 			   CodeLens
-
 call s:h('CocFloat',               {'bg': s:bg_subtle})
 hi link CocInfoFloat               CocFloat
 hi link CocHintFloat               CocFloat
 hi link CocErrorFloat              CocFloat
 hi link CocWarningFloat            CocFloat
-
 hi link CocPumFloating             Pmenu
 hi link CocPumFloatingDetail       Pmenu
-
 " BufTabLine
 hi link BufTabLineActive           TabLineSel
 " ALE
