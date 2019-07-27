@@ -130,7 +130,7 @@ call s:h('htmlH6',        {'fg': s:norm})
 " status line
 " call s:h('StatusLine',    {'bg': s:bg_subtle, 'fg': s:norm})
 " call s:h('StatusLineNC',  {'bg': s:bg_subtle, 'fg': s:bg})
-call s:h('StatusLine',    {'fg': s:norm_subtle})
+call s:h('StatusLine',    {'fg': s:magenta})
 call s:h('StatusLineNC',  {'fg': s:bg_subtle})
 " gui
 if has('gui_running')
