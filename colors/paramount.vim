@@ -162,7 +162,6 @@ call s:h('htmlH6',        {'fg': s:norm})
 call s:h('StatusLine',    {'bg': s:bg_very_subtle, 'fg': s:norm_subtle})
 call s:h('StatusLineNC',  {'bg': s:bg_very_subtle, 'fg': s:bg_very_subtle})
 call s:h('IStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:red})
-call s:h('NStatusLine',   {'bg': s:bg_very_subtle, 'fg': s:norm_subtle})
 " gui
 if has('gui_running')
     call s:h('SpellBad',    {'gui': s:underline, 'sp': s:red})
