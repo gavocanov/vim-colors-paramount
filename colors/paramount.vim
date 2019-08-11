@@ -130,6 +130,7 @@ call s:h('htmlH6',        {'fg': s:norm})
 " status line
 call s:h('StatusLine',    {'fg': s:magenta})
 call s:h('StatusLineNC',  {'fg': s:bg_subtle})
+call s:h('IStatusLine',   {'fg': s:red})
 " gui
 if has('gui_running')
     call s:h('SpellBad',    {'gui': s:underline, 'sp': s:red})
