@@ -40,18 +40,32 @@ else
     let s:underline = 'NONE'
 endif
 
-let s:bg              = { 'gui': 'NONE', 'cterm': '00' }
-let s:bg_subtle       = { 'gui': 'NONE', 'cterm': '08' }
-let s:norm            = { 'gui': 'NONE', 'cterm': '07' }
-let s:norm_subtle     = { 'gui': 'NONE', 'cterm': '15' }
+let s:background = &background
+if &background ==? 'light'
+    let s:bg              = { 'cterm': '00', 'gui': '#f2e5bc' }
+    let s:bg_subtle       = { 'cterm': '08', 'gui': '#bdae93' }
+    let s:norm            = { 'cterm': '07', 'gui': '#504945' }
+    let s:norm_subtle     = { 'cterm': '15', 'gui': '#504945' }
 
-let s:red             = { 'gui': 'NONE', 'cterm': '01' }
-let s:green           = { 'gui': 'NONE', 'cterm': '02' }
-let s:yellow          = { 'gui': 'NONE', 'cterm': '03' }
-let s:blue            = { 'gui': 'NONE', 'cterm': '04' }
-let s:magenta         = { 'gui': 'NONE', 'cterm': '05' }
-let s:cyan            = { 'gui': 'NONE', 'cterm': '06' }
+    let s:red             = { 'cterm': '01', 'gui': '#9d0006' }
+    let s:green           = { 'cterm': '02', 'gui': '#79740e' }
+    let s:yellow          = { 'cterm': '03', 'gui': '#b57614' }
+    let s:blue            = { 'cterm': '04', 'gui': '#076678' }
+    let s:magenta         = { 'cterm': '05', 'gui': '#8f3f71' }
+    let s:cyan            = { 'cterm': '06', 'gui': '#427b58' }
+else
+    let s:bg              = { 'cterm': '00', 'gui': '#161616' }
+    let s:bg_subtle       = { 'cterm': '08', 'gui': '#464646' }
+    let s:norm            = { 'cterm': '07', 'gui': '#a0a0a0' }
+    let s:norm_subtle     = { 'cterm': '15', 'gui': '#767676' }
 
+    let s:red             = { 'cterm': '01', 'gui': '#c32271' }
+    let s:green           = { 'cterm': '02', 'gui': '#10A778' }
+    let s:yellow          = { 'cterm': '03', 'gui': '#F0E126' }
+    let s:blue            = { 'cterm': '04', 'gui': '#005F87' }
+    let s:magenta         = { 'cterm': '05', 'gui': '#A790D5' }
+    let s:cyan            = { 'cterm': '06', 'gui': '#2095AC' }
+endif
 let s:string          = s:magenta
 let s:visual          = s:norm_subtle
 
@@ -67,7 +81,7 @@ function! s:h(group, style)
                 \ 'cterm='   (has_key(a:style, 'cterm') ? a:style.cterm    : 'NONE')
 endfunction
 
-if has('gui_running')
+if has('gui_running') || exists('g:fvim_loaded')
     call s:h('Normal', {'fg': s:norm, 'bg': s:bg})
 else
     call s:h('Normal', {'fg': s:norm})
