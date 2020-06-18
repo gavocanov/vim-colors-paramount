@@ -234,19 +234,30 @@ hi link CocPumFloatingDetail       Pmenu
 " BufTabLine
 hi link BufTabLineActive           TabLineSel
 " ALE
-hi link ALEInfoSign                WarnSign
-hi link ALEInfo                    WarnBg
-hi link ALEErrorSign               ErrorSign
+hi link ALEInfo                    InfoNoBg
+hi link ALEInfoSign                InfoSign
+hi link ALEInfoLine                InfoBg
+hi link ALEInfoSignLineNr          InfoSign
+
 hi link ALEError                   ErrorNoBg
+hi link ALEErrorSign               ErrorSign
 hi link ALEErrorLine               ErrorBg
-hi link ALEWarningSign             WarnSign
+hi link ALEErrorSignLineNr         ErrorSign
+
 hi link ALEWarning                 WarnNoBg
+hi link ALEWarningSign             WarnSign
 hi link ALEWarningLine             WarnNoBg
-hi link ALEVirtualTextError        WarnBg
-hi link ALEVirtualTextWarning      WarnBg
-hi link ALEVirtualTextInfo         WarnBg
-hi link ALEVirtualTextStyleError   WarnBg
-hi link ALEVirtualTextStyleWarning WarnBg
+hi link ALEWarningSignLineNr       WarnSign
+
+hi link ALEVirtualTextError        ErrorSign
+hi link ALEVirtualTextWarning      WarnSign
+hi link ALEVirtualTextInfo         HintSign
+hi link ALEVirtualTextStyleError   HintSign
+hi link ALEVirtualTextStyleWarning HintSign
+
+hi link ALEStyleError              ErrorNoBg
+hi link ALEStyleWarning            WarnNoBg
+
 " Syntastic
 hi link SyntasticWarningSign       WarnSign
 hi link SyntasticWarning           WarnNoBg
