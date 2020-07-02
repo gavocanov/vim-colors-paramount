@@ -231,6 +231,8 @@ hi link CocErrorFloat              CocFloat
 hi link CocWarningFloat            CocFloat
 hi link CocPumFloating             Pmenu
 hi link CocPumFloatingDetail       Pmenu
+" YankHighlight
+hi link HighlightedyankRegion      Pmenu
 " BufTabLine
 hi link BufTabLineActive           TabLineSel
 " ALE
