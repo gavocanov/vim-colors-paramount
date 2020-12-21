@@ -194,6 +194,7 @@ hi! link ModeMsg         MoreMsg
 call s:h('ErrorNoBg',               {'gui': s:italic, 'cterm': s:italic})
 call s:h('WarnNoBg',                {'gui': s:italic, 'cterm': s:italic})
 call s:h('InfoNoBg',                {'gui': s:italic, 'cterm': s:italic})
+call s:h('HintNoBg',                {'gui': s:italic, 'cterm': s:italic})
 " with background
 call s:h('ErrorBg',                 {})
 call s:h('WarnBg',                  {})
@@ -205,6 +206,34 @@ call s:h('WarnSign',                {'fg': s:yellow})
 call s:h('InfoSign',                {'fg': s:bg_subtle})
 call s:h('HintSign',                {'fg': s:bg_subtle})
 call s:h('Sign',                    {'fg': s:green})
+" lsp
+hi link LspDiagnosticsDefaultError           ErrorSign
+hi link LspDiagnosticsUnderlineError         ErrorNoBg
+hi link LspDiagnosticsSignError              ErrorSign
+hi link LspDiagnosticsFloatingError          ErrorSign
+hi link LspDiagnosticsVirtualTextError       ErrorSign
+
+hi link LspDiagnosticsDefaultWarning         WarnSign
+hi link LspDiagnosticsSignWarning            WarnSign
+hi link LspDiagnosticsFloatingWarning        WarnSign
+hi link LspDiagnosticsVirtualTextWarning     WarnSign
+hi link LspDiagnosticsUnderlineWarning       WarnNoBg
+
+hi link LspDiagnosticsDefaultInformation     InfoSign
+hi link LspDiagnosticsSignInformation        InfoSign
+hi link LspDiagnosticsFloatingInformation    InfoSign
+hi link LspDiagnosticsVirtualTextInformation InfoSign
+hi link LspDiagnosticsUnderlineInformation   InfoNoBg
+
+hi link LspDiagnosticsDefaultHint            HintSign
+hi link LspDiagnosticsSignHint               HintSign
+hi link LspDiagnosticsFloatingHint           HintSign
+hi link LspDiagnosticsVirtualTextHint        HintSign
+hi link LspDiagnosticsUnderlineHint          HintNoBg
+
+hi link LspReferenceText                     InfoSign
+hi link LspReferenceRead                     WarningSign
+hi link LspReferenceWrite                    ErrorSign
 " CoC
 hi link CocErrorSign 			   ErrorSign
 hi link CocWarningSign 			   WarnSign
